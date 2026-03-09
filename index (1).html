@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 Bons Plans Amazon – Deals du jour</title>
+<meta name="description" content="Les meilleures promos Amazon France du jour. Jusqu'à -70% sur les meilleurs produits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ─── VARIABLES ─────────────────────────────────────── */
+  :root {
+    --bg:        #0a0a0f;
+    --surface:   #13131a;
+    --card:      #1a1a24;
+    --border:    #2a2a3a;
+    --orange:    #ff6b00;
+    --orange2:   #ff9a00;
+    --green:     #00e676;
+    --red:       #ff3d3d;
+    --text:      #f0f0f5;
+    --muted:     #8888aa;
+    --gold:      #ffd740;
+    --radius:    16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── GRAIN OVERLAY ─────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: .4;
+  }
+
+  /* ─── HEADER ────────────────────────────────────────── */
+  header {
+    position: relative;
+    padding: 48px 20px 36px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 500px; height: 300px;
+    background: radial-gradient(ellipse, rgba(255,107,0,.22) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .logo {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, var(--orange), var(--orange2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 9vw, 72px);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .logo-fire { -webkit-text-fill-color: initial; font-size: .9em; }
+
+  .tagline {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+
+  .tagline span { color: var(--green); font-weight: 700; }
+
+  /* ─── BARRE STATS ───────────────────────────────────── */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 24px;
+    padding: 14px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500; color: var(--muted);
+  }
+
+  .stat strong { color: var(--text); font-size: 15px; }
+
+  /* ─── FILTRES ───────────────────────────────────────── */
+  .filters-wrap {
+    padding: 20px 16px 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filters-wrap::-webkit-scrollbar { display: none; }
+
+  .filters {
+    display: flex; gap: 8px;
+    width: max-content;
+    padding-bottom: 4px;
+  }
+
+  .filter-btn {
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+    background: rgba(255,107,0,.08);
+  }
+
+  /* ─── BARRE DE TRI ──────────────────────────────────── */
+  .sort-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 16px 0;
+    flex-wrap: wrap; gap: 10px;
+  }
+
+  .results-count {
+    font-size: 13px; color: var(--muted);
+  }
+
+  .results-count strong { color: var(--text); }
+
+  .sort-select {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    padding: 7px 12px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* ─── GRILLE PRODUITS ───────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 16px;
+    padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ─── CARTE PRODUIT ─────────────────────────────────── */
+  .card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    cursor: pointer;
+    transition: transform .25s cubic-bezier(.34,1.56,.64,1),
+                border-color .2s, box-shadow .25s;
+    text-decoration: none;
+    color: inherit;
+    animation: fadeUp .4s both;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--orange);
+    box-shadow: 0 12px 40px rgba(255,107,0,.15);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Image */
+  .card-img-wrap {
+    position: relative;
+    background: #fff;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    transition: transform .35s ease;
+  }
+
+  .card:hover .card-img {
+    transform: scale(1.06);
+  }
+
+  /* Badge réduction */
+  .badge-discount {
+    position: absolute; top: 10px; left: 10px;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    line-height: 1.2;
+    box-shadow: 0 4px 12px rgba(255,61,61,.4);
+  }
+
+  /* Badge Prime */
+  .badge-prime {
+    position: absolute; top: 10px; right: 10px;
+    background: linear-gradient(135deg,#00a8e0,#0066c0);
+    color: #fff;
+    font-size: 10px; font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: .5px;
+  }
+
+  /* Body carte */
+  .card-body {
+    padding: 14px;
+    flex: 1;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+
+  /* Catégorie */
+  .card-cat {
+    font-size: 10px; font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* Titre */
+  .card-title {
+    font-size: 14px; font-weight: 500;
+    line-height: 1.4;
+    color: var(--text);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Étoiles */
+  .card-rating {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px;
+  }
+
+  .stars { color: var(--gold); letter-spacing: -1px; }
+  .rating-num { font-weight: 700; color: var(--text); }
+  .rating-count { color: var(--muted); }
+
+  /* Prix */
+  .card-prices {
+    display: flex; align-items: baseline; gap: 8px;
+    margin-top: auto;
+  }
+
+  .price-current {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .price-original {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: line-through;
+  }
+
+  .price-savings {
+    font-size: 11px; font-weight: 700;
+    color: var(--red);
+    background: rgba(255,61,61,.1);
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
+
+  /* Bouton CTA */
+  .card-cta {
+    margin-top: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--orange), var(--orange2));
+    border-radius: 10px;
+    font-weight: 700; font-size: 14px;
+    color: #0a0a0f;
+    transition: opacity .2s, transform .15s;
+  }
+
+  .card:hover .card-cta {
+    opacity: .92;
+    transform: scale(1.02);
+  }
+
+
+  /* ─── RECHERCHE ─────────────────────────────────────── */
+  .search-wrap {
+    padding: 20px 16px 0;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .search-box {
+    display: flex; align-items: center;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 50px;
+    padding: 0 16px;
+    gap: 10px;
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .search-box:focus-within {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255,107,0,.12);
+  }
+
+  .search-icon { font-size: 18px; flex-shrink: 0; }
+
+  #searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    padding: 16px 0;
+  }
+
+  #searchInput::placeholder { color: var(--muted); }
+
+  .search-clear {
+    background: none; border: none;
+    color: var(--muted); font-size: 16px;
+    cursor: pointer; padding: 4px 6px;
+    border-radius: 50%; transition: color .15s;
+    display: none;
+  }
+
+  .search-clear.visible { display: block; }
+  .search-clear:hover { color: var(--text); }
+
+  .search-hint {
+    margin-top: 8px;
+    font-size: 12px; color: var(--muted);
+    text-align: center;
+  }
+
+  .search-hint strong { color: var(--orange); }
+
+  /* Highlight numéro deal quand recherche active */
+  .deal-num.highlight {
+    background: var(--orange);
+    color: #000;
+    transform: scale(1.1);
+  }
+
+  /* ─── NUMÉRO DEAL ────────────────────────────────────── */
+  .deal-num {
+    display: inline-block;
+    background: rgba(255,107,0,.15);
+    border: 1.5px solid rgba(255,107,0,.4);
+    color: var(--orange);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    transition: background .2s, transform .2s;
+  }
+
+  /* Résultats recherche */
+  .search-result-count {
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    color: var(--orange);
+    font-weight: 600;
+    display: none;
+  }
+
+  .search-result-count.visible { display: block; }
+
+  /* ─── ÉTAT CHARGEMENT ───────────────────────────────── */
+  .loading {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 80px 20px; gap: 20px;
+  }
+
+  .spinner {
+    width: 44px; height: 44px;
+    border: 3px solid var(--border);
+    border-top-color: var(--orange);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading p { color: var(--muted); font-size: 15px; }
+
+  /* ─── ÉTAT VIDE ─────────────────────────────────────── */
+  .empty {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: 15px;
+  }
+  .empty span { font-size: 40px; display: block; margin-bottom: 12px; }
+
+  /* ─── FOOTER ────────────────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  footer a { color: var(--orange); text-decoration: none; }
+
+  /* ─── BANNER MISE À JOUR ─────────────────────────────── */
+  .update-banner {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0,230,118,.06);
+    border-bottom: 1px solid rgba(0,230,118,.15);
+    font-size: 12px;
+    color: var(--green);
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 480px) {
+    .logo { font-size: 38px; }
+    .stats-bar { gap: 14px; }
+    .grid { gap: 12px; padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Bannière mise à jour -->
+<div class="update-banner" id="updateBanner">⚡ Chargement des deals...</div>
+
+<!-- Header -->
+<header>
+  <div class="logo"><span class="logo-fire">🔥</span>BONS PLANS AMAZON</div>
+  <p class="tagline">Jusqu'à <span>-70%</span> sur les meilleurs produits du moment</p>
+</header>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat">📦 <strong id="statTotal">–</strong>&nbsp;deals</div>
+  <div class="stat">💰 Réduction moy. <strong id="statAvgDisc">–</strong></div>
+  <div class="stat">⭐ Note moy. <strong id="statAvgRating">–</strong></div>
+  <div class="stat">🕐 Mis à jour <strong id="statDate">–</strong></div>
+</div>
+
+
+<!-- Barre de recherche + numéro deal -->
+<div class="search-wrap">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Recherche : produit, catégorie ou numéro (#042)…"
+      autocomplete="off"
+      spellcheck="false"
+    >
+    <button class="search-clear" id="searchClear" aria-label="Effacer">✕</button>
+  </div>
+  <p class="search-hint" id="searchHint">
+    💡 Tape le numéro vu dans la vidéo — ex: <strong>#042</strong>
+  </p>
+</div>
+
+<!-- Filtres catégorie -->
+<div class="filters-wrap">
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-cat="all">🏆 Tous</button>
+  </div>
+</div>
+
+<!-- Tri -->
+<div class="sort-bar">
+  <p class="results-count"><strong id="visibleCount">0</strong> produit(s) affiché(s)</p>
+  <select class="sort-select" id="sortSelect">
+    <option value="score">🏅 Meilleur score</option>
+    <option value="discount">💥 Plus grosse réduction</option>
+    <option value="price_asc">💶 Prix croissant</option>
+    <option value="price_desc">💶 Prix décroissant</option>
+    <option value="rating">⭐ Mieux notés</option>
+  </select>
+</div>
+
+<!-- Grille -->
+
+<div class="search-result-count" id="searchResultCount"></div>
+<div id="grid" class="grid">
+  <div class="loading">
+    <div class="spinner"></div>
+    <p>Chargement des deals...</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>🛒 Liens affiliés Amazon — commission sans surcoût pour toi</p>
+  <p>Les prix peuvent varier · Offres limitées dans le temps</p>
+  <p style="margin-top:8px"><a href="https://www.amazon.fr?tag=REMPLACE_PAR_TON_TAG" target="_blank">→ Explorer tout Amazon.fr</a></p>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// CONFIG — remplace par ton tag affilié
+// ══════════════════════════════════════════════════════════
+const AFFILIATE_TAG = "REMPLACE_PAR_TON_TAG";   // ex: fz2107-21
+const JSON_URL      = "./data/goldbox_v6.json";  // chemin depuis index.html
+
+// ══════════════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════════════
+const affiliateUrl = asin =>
+  `https://www.amazon.fr/dp/${asin}?tag=${AFFILIATE_TAG}`;
+
+const stars = rating => {
+  const full  = Math.floor(rating);
+  const half  = rating - full >= 0.5 ? 1 : 0;
+  const empty = 5 - full - half;
+  return "★".repeat(full) + (half ? "½" : "") + "☆".repeat(empty);
+};
+
+const fmt = price =>
+  price != null ? price.toFixed(2).replace(".", ",") + "€" : null;
+
+const relDate = iso => {
+  if (!iso) return "–";
+  const d = new Date(iso);
+  return d.toLocaleDateString("fr-FR", { day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit" });
+};
+
+// ══════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════
+let allProducts   = [];
+let activeFilter  = "all";
+let activeSort    = "score";
+let currentSearch = "";
+
+// ══════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════
+function buildCard(p, index, searchTerm) {
+  const asin     = p.asin || "";
+  const title    = p.title || "Produit Amazon";
+  const t        = p.triggers || {};
+  const price    = p.price;
+  const orig     = p.price_original || t.original_price;
+  const disc     = t.discount_percent || 0;
+  const rating   = t.rating || p.rating || 0;
+  const reviews  = t.reviews_count || 0;
+  const hasPrime = t.has_prime || false;
+  const cat      = p.category || "Autres";
+  const img      = (p.images || [])[0] || "";
+  const savings  = orig && price ? (orig - price).toFixed(2) : null;
+  const href     = affiliateUrl(asin);
+  const dealId   = p.deal_id || "";
+  const isNumSearch = searchTerm && /^#?\d+$/.test(searchTerm.trim());
+
+  const delay = Math.min(index * 40, 400);
+
+  return `
+  <a class="card" href="${href}" target="_blank" rel="noopener"
+     style="animation-delay:${delay}ms">
+
+    <div class="card-img-wrap">
+      ${img ? `<img class="card-img" src="${img}" alt="${title}" loading="lazy" onerror="this.style.display='none'">` : ""}
+      ${disc >= 5  ? `<div class="badge-discount">-${disc}%</div>` : ""}
+      ${hasPrime   ? `<div class="badge-prime">PRIME</div>` : ""}
+    </div>
+
+    <div class="card-body">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        ${dealId ? `<span class="deal-num ${isNumSearch ? 'highlight' : ''}">${dealId}</span>` : ""}
+        <span class="card-cat">${cat}</span>
+      </div>
+
+      <p class="card-title">${title}</p>
+
+      ${rating ? `
+      <div class="card-rating">
+        <span class="stars">${stars(rating)}</span>
+        <span class="rating-num">${rating}</span>
+        ${reviews ? `<span class="rating-count">(${reviews.toLocaleString("fr-FR")} avis)</span>` : ""}
+      </div>` : ""}
+
+      <div class="card-prices">
+        ${price ? `<span class="price-current">${fmt(price)}</span>` : ""}
+        ${orig  ? `<span class="price-original">${fmt(orig)}</span>` : ""}
+        ${savings && disc >= 5 ? `<span class="price-savings">-${savings}€</span>` : ""}
+      </div>
+
+      <div class="card-cta">
+        🛒 Voir sur Amazon
+      </div>
+    </div>
+  </a>`;
+}
+
+function getSortedFiltered() {
+  let list = activeFilter === "all"
+    ? [...allProducts]
+    : allProducts.filter(p => (p.category || "Autres") === activeFilter);
+
+  list = list.filter(p => p.price && !p.error);
+
+  // ── Filtre recherche ──────────────────────────────────
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase().trim();
+    const numMatch = q.match(/^#?(\d+)$/);
+    list = list.filter(p => {
+      if (numMatch) {
+        // Recherche par numéro exact
+        const num = numMatch[1];
+        return (p.deal_id || "").replace("#","").padStart(3,"0") === num.padStart(3,"0")
+            || String(p.deal_number || "") === num;
+      }
+      // Recherche textuelle (titre + catégorie)
+      const haystack = [p.title||"", p.category||"", p.deal_id||""].join(" ").toLowerCase();
+      return q.split(" ").every(word => haystack.includes(word));
+    });
+  }
+
+  const sorts = {
+    score:      (a, b) => (b.score||0) - (a.score||0),
+    discount:   (a, b) => ((b.triggers||{}).discount_percent||0) - ((a.triggers||{}).discount_percent||0),
+    price_asc:  (a, b) => (a.price||999) - (b.price||999),
+    price_desc: (a, b) => (b.price||0) - (a.price||0),
+    rating:     (a, b) => ((b.triggers||{}).rating||0) - ((a.triggers||{}).rating||0),
+  };
+  return list.sort(sorts[activeSort] || sorts.score);
+}
+
+function render() {
+  const list  = getSortedFiltered();
+  const grid  = document.getElementById("grid");
+  document.getElementById("visibleCount").textContent = list.length;
+
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty"><span>😕</span>Aucun produit dans cette catégorie.</div>`;
+    return;
+  }
+  grid.innerHTML = list.map((p, i) => buildCard(p, i, currentSearch)).join("");
+}
+
+// ══════════════════════════════════════════════════════════
+// FILTRES & TRI
+// ══════════════════════════════════════════════════════════
+function buildFilters(products) {
+  const cats = [...new Set(products.map(p => p.category || "Autres"))].sort();
+  const wrap  = document.getElementById("filters");
+  cats.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn";
+    btn.dataset.cat = cat;
+    btn.textContent = catEmoji(cat) + " " + cat;
+    wrap.appendChild(btn);
+  });
+  wrap.addEventListener("click", e => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    wrap.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.cat;
+    render();
+  });
+}
+
+function catEmoji(cat) {
+  const map = {
+    "Informatique":"💻","Électronique":"📱","Cuisine":"🍳","Sport":"🏋️",
+    "Beauté":"💄","Maison":"🏠","Jardinage":"🌱","Auto":"🚗","Jeux":"🎮",
+    "Livres":"📚","Vêtements":"👕","Bébé":"🍼","Santé":"💊","Animaux":"🐾",
+    "Autres":"📦","Tech":"⚡","Coiffure":"✂️","BonPlan":"🏷️",
+  };
+  for (const [k, v] of Object.entries(map))
+    if (cat.toLowerCase().includes(k.toLowerCase())) return v;
+  return "📦";
+}
+
+document.getElementById("sortSelect").addEventListener("change", e => {
+  activeSort = e.target.value;
+  render();
+});
+
+// ══════════════════════════════════════════════════════════
+// STATS
+// ══════════════════════════════════════════════════════════
+function updateStats(products, scrapedAt) {
+  const valid   = products.filter(p => p.price);
+  const discArr = valid.map(p => (p.triggers||{}).discount_percent||0).filter(Boolean);
+  const ratArr  = valid.map(p => (p.triggers||{}).rating||0).filter(Boolean);
+  const avgDisc = discArr.length ? Math.round(discArr.reduce((a,b)=>a+b,0)/discArr.length) : 0;
+  const avgRat  = ratArr.length  ? (ratArr.reduce((a,b)=>a+b,0)/ratArr.length).toFixed(1)  : "–";
+
+  document.getElementById("statTotal").textContent    = valid.length;
+  document.getElementById("statAvgDisc").textContent  = avgDisc ? `-${avgDisc}%` : "–";
+  document.getElementById("statAvgRating").textContent = avgRat ? `${avgRat}/5` : "–";
+  document.getElementById("statDate").textContent      = relDate(scrapedAt);
+}
+
+// ══════════════════════════════════════════════════════════
+// CHARGEMENT JSON
+// ══════════════════════════════════════════════════════════
+async function loadDeals() {
+  try {
+    const res = await fetch(JSON_URL + "?t=" + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    const products  = data.all_products || (Array.isArray(data) ? data : []);
+    const scrapedAt = data.scraped_at || null;
+
+    allProducts = products;
+
+    // Bannière
+    const banner = document.getElementById("updateBanner");
+    banner.textContent = scrapedAt
+      ? `✅ Deals mis à jour le ${relDate(scrapedAt)}`
+      : "✅ Deals chargés";
+
+    updateStats(products, scrapedAt);
+    buildFilters(products);
+    render();
+
+  } catch (err) {
+    document.getElementById("grid").innerHTML = `
+      <div class="empty">
+        <span>⚠️</span>
+        Impossible de charger les deals.<br>
+        <small style="color:var(--muted)">${err.message}</small>
+      </div>`;
+    document.getElementById("updateBanner").textContent = "❌ Erreur de chargement";
+    console.error("Erreur chargement JSON:", err);
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+// BARRE DE RECHERCHE INSTANTANÉE
+// ══════════════════════════════════════════════════════════
+const searchInput = document.getElementById("searchInput");
+const searchClear = document.getElementById("searchClear");
+const searchHint  = document.getElementById("searchHint");
+
+let searchTimer = null;
+
+searchInput.addEventListener("input", () => {
+  const val = searchInput.value.trim();
+  currentSearch = val;
+
+  // Bouton clear
+  searchClear.classList.toggle("visible", val.length > 0);
+
+  // Hint adaptatif
+  if (val && /^#?\d+$/.test(val)) {
+    searchHint.innerHTML = `🎯 Recherche du deal numéro <strong>${val.replace("#","#")}</strong>…`;
+  } else if (val) {
+    searchHint.innerHTML = `🔍 Filtrage en cours…`;
+  } else {
+    searchHint.innerHTML = `💡 Tape le numéro vu dans la vidéo — ex: <strong>#042</strong>`;
+  }
+
+  // Debounce 150ms pour éviter trop de re-renders
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(render, 150);
+});
+
+searchClear.addEventListener("click", () => {
+  searchInput.value = "";
+  currentSearch = "";
+  searchClear.classList.remove("visible");
+  searchHint.innerHTML = `💡 Tape le numéro vu dans la vidéo — ex: <strong>#042</strong>`;
+  document.getElementById("searchResultCount").classList.remove("visible");
+  render();
+  searchInput.focus();
+});
+
+// Raccourci clavier : "/" pour focus la recherche
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement !== searchInput) {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+  if (e.key === "Escape" && document.activeElement === searchInput) {
+    searchInput.blur();
+  }
+});
+
+loadDeals();
+</script>
+</body>
+</html>
