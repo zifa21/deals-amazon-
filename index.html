@@ -542,8 +542,15 @@
 // ══════════════════════════════════════════════════════════
 // CONFIG — remplace par ton tag affilié
 // ══════════════════════════════════════════════════════════
-const AFFILIATE_TAG = "fz2107-21";   // ex: fz2107-21
-const JSON_URL      = "./data/goldbox_v6.json";  // chemin depuis index.html
+const AFFILIATE_TAG = "fz2107-21";
+const JSON_URL      = "./data/goldbox_v6.json";
+
+// Catégories masquées — les livres ne génèrent pas de commission affilié intéressante
+const BLOCKED_CATEGORIES = [
+  "livres","books","livre","book","romans","roman","bd","bandes dessinées",
+  "mangas","manga","kindle","ebooks","ebook","littérature","literatura",
+  "comics","poésie","dictionnaire","atlas","encyclopédie"
+];
 
 // ══════════════════════════════════════════════════════════
 // HELPERS
@@ -565,6 +572,12 @@ const relDate = iso => {
   if (!iso) return "–";
   const d = new Date(iso);
   return d.toLocaleDateString("fr-FR", { day:"2-digit", month:"2-digit", hour:"2-digit", minute:"2-digit" });
+};
+
+// Filtre livres
+const isBlockedCat = p => {
+  const cat = (p.category || "").toLowerCase();
+  return BLOCKED_CATEGORIES.some(b => cat.includes(b));
 };
 
 // ══════════════════════════════════════════════════════════
@@ -640,7 +653,7 @@ function getSortedFiltered() {
     ? [...allProducts]
     : allProducts.filter(p => (p.category || "Autres") === activeFilter);
 
-  list = list.filter(p => p.price && !p.error);
+  list = list.filter(p => p.price && !p.error && !isBlockedCat(p));
 
   // ── Filtre recherche ──────────────────────────────────
   if (currentSearch) {
@@ -685,7 +698,8 @@ function render() {
 // FILTRES & TRI
 // ══════════════════════════════════════════════════════════
 function buildFilters(products) {
-  const cats = [...new Set(products.map(p => p.category || "Autres"))].sort();
+  const validProds = products.filter(p => p.price && !p.error && !isBlockedCat(p));
+  const cats = [...new Set(validProds.map(p => p.category || "Autres"))].sort();
   const wrap  = document.getElementById("filters");
   cats.forEach(cat => {
     const btn = document.createElement("button");
@@ -725,7 +739,7 @@ document.getElementById("sortSelect").addEventListener("change", e => {
 // STATS
 // ══════════════════════════════════════════════════════════
 function updateStats(products, scrapedAt) {
-  const valid   = products.filter(p => p.price);
+  const valid   = products.filter(p => p.price && !isBlockedCat(p));
   const discArr = valid.map(p => (p.triggers||{}).discount_percent||0).filter(Boolean);
   const ratArr  = valid.map(p => (p.triggers||{}).rating||0).filter(Boolean);
   const avgDisc = discArr.length ? Math.round(discArr.reduce((a,b)=>a+b,0)/discArr.length) : 0;
@@ -746,7 +760,7 @@ async function loadDeals() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    const products  = data.all_products || (Array.isArray(data) ? data : []);
+    const products  = (data.all_products || (Array.isArray(data) ? data : [])).filter(p => !isBlockedCat(p));
     const scrapedAt = data.scraped_at || null;
 
     allProducts = products;

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>🔥 Bons Plans Amazon — Liens & Deals</title>
+<meta name="description" content="Tous mes liens deals Amazon : page, Instagram, TikTok, Facebook, Pinterest, WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{min-height:100vh;background:#f0efec;font-family:'Outfit',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center}
+/* HERO */
+.hero{width:100%;background:linear-gradient(155deg,#ff6b00 0%,#ff3500 55%,#c42200 100%);padding:44px 24px 72px;display:flex;flex-direction:column;align-items:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-36px;left:0;right:0;height:72px;background:#f0efec;border-radius:44px 44px 0 0}
+.deco1{position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.08);pointer-events:none}
+.deco2{position:absolute;bottom:20px;left:-40px;width:120px;height:120px;border-radius:50%;background:rgba(0,0,0,.06);pointer-events:none}
+.avatar{width:86px;height:86px;border-radius:50%;background:rgba(255,255,255,.2);border:3px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;font-size:38px;margin-bottom:14px;position:relative;z-index:1}
+.hero-name{font-size:22px;font-weight:800;color:#fff;letter-spacing:.5px;position:relative;z-index:1;margin-bottom:6px}
+.hero-bio{font-size:13px;color:rgba(255,255,255,.85);text-align:center;max-width:280px;line-height:1.55;position:relative;z-index:1}
+/* STATS */
+.stats-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:16px 20px 0;position:relative;z-index:1}
+.s-pill{background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.3);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:600;color:#fff}
+/* CONTENT */
+.content{width:100%;max-width:460px;padding:8px 16px 48px}
+.section-lbl{font-size:11px;font-weight:700;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;padding:22px 4px 8px}
+/* FEATURED */
+.lk-feat{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border-radius:18px;text-decoration:none;color:#111;box-shadow:0 6px 24px rgba(255,107,0,.2),0 1px 4px rgba(0,0,0,.05);border:2px solid #ff6b00;margin-bottom:10px;transition:transform .16s}
+.lk-feat:active{transform:scale(.98)}
+.lk-feat-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#ff6b00,#ff9500);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.lk-feat-body{flex:1;min-width:0}
+.lk-feat-title{font-size:15px;font-weight:800;color:#111;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pdot 1.8s ease-in-out infinite;flex-shrink:0}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.lk-feat-sub{font-size:12px;color:#888}
+.arr{font-size:18px;color:#ff6b00;font-weight:800;flex-shrink:0}
+/* NORMAL CARD */
+.lk{display:flex;align-items:center;gap:14px;padding:13px 14px;background:#fff;border-radius:14px;text-decoration:none;color:#111;border:1.5px solid #ebebeb;margin-bottom:8px;transition:transform .14s,border-color .14s}
+.lk:active{transform:scale(.98)}
+@media(hover:hover){.lk:hover{border-color:#ff6b00;box-shadow:0 4px 14px rgba(255,107,0,.1);transform:translateY(-1px)}}
+.lk-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ic-ig{background:linear-gradient(135deg,#f9a825 0%,#e91e8c 50%,#9c27b0 100%)}
+.ic-tt{background:#010101}
+.ic-fb{background:#1877f2}
+.ic-pin{background:#e60023}
+.ic-wa{background:#25d366}
+.lk-body{flex:1;min-width:0}
+.lk-title{font-size:14px;font-weight:700;color:#111;margin-bottom:1px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.lk-sub{font-size:12px;color:#999}
+.new-tag{font-size:9px;font-weight:700;background:#22c55e;color:#fff;padding:2px 7px;border-radius:50px;letter-spacing:.5px}
+.lk-arr{font-size:16px;color:#ccc;flex-shrink:0}
+/* DEALS */
+.deals-box{background:#fff;border-radius:16px;border:1.5px solid #ebebeb;overflow:hidden}
+.deals-head{padding:13px 16px 11px;border-bottom:1.5px solid #f3f3f3;font-size:13px;font-weight:700;color:#111}
+.deal-row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid #f5f5f5;text-decoration:none;color:#111;transition:background .12s}
+.deal-row:last-child{border-bottom:none}
+.deal-row:active{background:#fafafa}
+.deal-thumb{width:52px;height:52px;border-radius:10px;background:#f8f8f8;object-fit:contain;flex-shrink:0;padding:4px}
+.deal-ph{width:52px;height:52px;border-radius:10px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.d-name{font-size:12px;font-weight:600;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.d-prices{display:flex;align-items:center;gap:6px;margin-top:3px}
+.d-price{font-size:15px;font-weight:800;color:#ff6b00}
+.d-orig{font-size:11px;color:#ccc;text-decoration:line-through}
+.d-disc{font-size:10px;font-weight:700;background:#ff3500;color:#fff;padding:2px 6px;border-radius:4px}
+.see-all{display:flex;align-items:center;justify-content:center;gap:6px;padding:14px;font-size:13px;font-weight:700;color:#ff6b00;text-decoration:none;background:#fff8f5;transition:background .12s}
+.see-all:active{background:#ffe8dc}
+/* FOOTER */
+.footer{padding:20px 20px 36px;text-align:center;font-size:11px;color:#bbb;line-height:1.7}
+.footer a{color:#bbb;text-decoration:none}
+/* SKELETON */
+.sk{border-radius:6px;background:linear-gradient(90deg,#eeece8 25%,#e6e4df 50%,#eeece8 75%);background-size:200% 100%;animation:sk 1.3s ease-in-out infinite}
+@keyframes sk{to{background-position:-200% 0}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="deco1"></div>
+  <div class="deco2"></div>
+  <div class="avatar">🔥</div>
+  <div class="hero-name">Bons Plans Amazon</div>
+  <p class="hero-bio">Les vraies promos Amazon France, vérifiées et mises à jour plusieurs fois par jour.</p>
+  <div class="stats-row">
+    <div class="s-pill" id="sp1">⏳ Chargement...</div>
+    <div class="s-pill" id="sp2" style="display:none"></div>
+    <div class="s-pill" id="sp3" style="display:none"></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="section-lbl">🌐 Ma page deals</div>
+
+  <a class="lk-feat" href="https://zifa21.github.io/deals-amazon-/" target="_blank" rel="noopener">
+    <div class="lk-feat-icon">🔥</div>
+    <div class="lk-feat-body">
+      <div class="lk-feat-title">Tous les deals Amazon <span class="live-dot"></span></div>
+      <div class="lk-feat-sub">Mise à jour automatique · Filtre, trie, cherche par n°</div>
+    </div>
+    <div class="arr">→</div>
+  </a>
+
+  <div class="section-lbl">📲 Mes réseaux</div>
+
+  <a class="lk" href="https://www.instagram.com/bonplans_hightech/" target="_blank" rel="noopener">
+    <div class="lk-icon ic-ig">📸</div>
+    <div class="lk-body">
+      <div class="lk-title">Instagram</div>
+      <div class="lk-sub">@bonplans_hightech · Reels & Carrousels deals</div>
+    </div>
+    <div class="lk-arr">→</div>
+  </a>
+
+  <a class="lk" href="https://www.tiktok.com/@un_jour_un_deal" target="_blank" rel="noopener">
+    <div class="lk-icon ic-tt">🎵</div>
+    <div class="lk-body">
+      <div class="lk-title">TikTok</div>
+      <div class="lk-sub">@un_jour_un_deal · Vidéos deals format court</div>
+    </div>
+    <div class="lk-arr">→</div>
+  </a>
+
+  <a class="lk" href="https://www.facebook.com/profile.php?id=61582781740319" target="_blank" rel="noopener">
+    <div class="lk-icon ic-fb">👍</div>
+    <div class="lk-body">
+      <div class="lk-title">Facebook</div>
+      <div class="lk-sub">Page deals · Liens directs Amazon cliquables</div>
+    </div>
+    <div class="lk-arr">→</div>
+  </a>
+
+  <a class="lk" href="https://fr.pinterest.com/zifabox/" target="_blank" rel="noopener">
+    <div class="lk-icon ic-pin">📌</div>
+    <div class="lk-body">
+      <div class="lk-title">Pinterest</div>
+      <div class="lk-sub">Épingles avec liens directs Amazon</div>
+    </div>
+    <div class="lk-arr">→</div>
+  </a>
+
+  <a class="lk" href="https://whatsapp.com/channel/0029VbCUpcv6rsQxePqNXL1r" target="_blank" rel="noopener">
+    <div class="lk-icon ic-wa">💬</div>
+    <div class="lk-body">
+      <div class="lk-title">Chaîne WhatsApp <span class="new-tag">NOUVEAU</span></div>
+      <div class="lk-sub">Alertes deals instantanées · Lien Amazon direct</div>
+    </div>
+    <div class="lk-arr">→</div>
+  </a>
+
+  <div class="section-lbl">⚡ Derniers deals</div>
+
+  <div class="deals-box">
+    <div class="deals-head">🏷️ Top deals du moment</div>
+    <div id="dealsInner">
+      <div class="deal-row"><div class="deal-ph sk" style="height:52px"></div><div style="flex:1"><div class="sk" style="height:11px;width:68%;margin-bottom:7px"></div><div class="sk" style="height:15px;width:38%"></div></div></div>
+      <div class="deal-row"><div class="deal-ph sk" style="height:52px"></div><div style="flex:1"><div class="sk" style="height:11px;width:55%;margin-bottom:7px"></div><div class="sk" style="height:15px;width:32%"></div></div></div>
+      <div class="deal-row"><div class="deal-ph sk" style="height:52px"></div><div style="flex:1"><div class="sk" style="height:11px;width:72%;margin-bottom:7px"></div><div class="sk" style="height:15px;width:42%"></div></div></div>
+    </div>
+    <a class="see-all" href="https://zifa21.github.io/deals-amazon-/" target="_blank" rel="noopener">Voir tous les deals →</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Liens affiliés Amazon · Commission sans surcoût pour toi</p>
+  <p><a href="https://zifa21.github.io/deals-amazon-/">zifa21.github.io/deals-amazon-/</a></p>
+</div>
+
+<script>
+const JSON_URL  = "https://zifa21.github.io/deals-amazon-/data/goldbox_v6.json";
+const AFFILIATE = "fz2107-21";
+const BLOCKED   = ["livres","books","livre","book","romans","bd","mangas","manga","kindle","ebook","littérature"];
+
+const isBlocked = p => BLOCKED.some(b => (p.category||"").toLowerCase().includes(b));
+const affUrl    = asin => `https://www.amazon.fr/dp/${asin}?tag=${AFFILIATE}`;
+
+async function load(){
+  try{
+    const r    = await fetch(JSON_URL+"?t="+Date.now());
+    if(!r.ok) throw new Error();
+    const data = await r.json();
+    const all  = data.all_products||(Array.isArray(data)?data:[]);
+    const valid = all.filter(p=>p.price&&!p.error&&!isBlocked(p));
+    const discs = valid.map(p=>(p.triggers||{}).discount_percent||0).filter(Boolean);
+    const rats  = valid.map(p=>(p.triggers||{}).rating||0).filter(Boolean);
+    const sp1=document.getElementById("sp1"),sp2=document.getElementById("sp2"),sp3=document.getElementById("sp3");
+    sp1.textContent="🛒 "+valid.length+" deals actifs";
+    if(discs.length){sp2.textContent="💰 Jusqu'à -"+Math.max(...discs)+"%";sp2.style.display="";}
+    if(rats.length){sp3.textContent="⭐ "+(rats.reduce((a,b)=>a+b,0)/rats.length).toFixed(1)+"/5";sp3.style.display="";}
+    const top5=[...valid].sort((a,b)=>(b.score||0)-(a.score||0)).slice(0,5);
+    document.getElementById("dealsInner").innerHTML=top5.map(p=>{
+      const t=p.triggers||{},img=(p.images||[])[0]||"",asin=p.asin||"";
+      const name=(p.title||"Produit").slice(0,50);
+      const price=p.price!=null?p.price.toFixed(2)+"€":"";
+      const orig=t.original_price||p.price_original||0,disc=t.discount_percent||0;
+      const href=asin?affUrl(asin):"https://zifa21.github.io/deals-amazon-/";
+      const imgEl=img?`<img class="deal-thumb" src="${img}" alt="" loading="lazy" onerror="this.outerHTML='<div class=\\'deal-ph\\'>📦</div>'">`:`<div class="deal-ph">📦</div>`;
+      return `<a class="deal-row" href="${href}" target="_blank" rel="noopener">${imgEl}<div style="flex:1;min-width:0"><div class="d-name">${name}</div><div class="d-prices">${price?`<span class="d-price">${price}</span>`:""}${orig&&disc>=5?`<span class="d-orig">${orig.toFixed(2)}€</span>`:""}${disc>=5?`<span class="d-disc">-${disc}%</span>`:""}</div></div></a>`;
+    }).join("");
+  }catch(e){
+    document.getElementById("sp1").textContent="Voir les deals →";
+    document.getElementById("dealsInner").innerHTML=`<div style="padding:18px;text-align:center;font-size:13px;color:#aaa">Impossible de charger · <a href="https://zifa21.github.io/deals-amazon-/" style="color:#ff6b00">voir la page</a></div>`;
+  }
+}
+load();
+</script>
+</body>
+</html>
