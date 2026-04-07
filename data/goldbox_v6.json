@@ -32,7 +32,8 @@
         "has_prime": true
       },
       "score": 8.5,
-      "deal_number": 1
+      "deal_number": 1,
+      "deal_id": "#91LZBY"
     },
     {
       "asin": "B08PDDSDHY",
@@ -64,7 +65,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 2
+      "deal_number": 2,
+      "deal_id": "#DDSDHY"
     },
     {
       "asin": "B07N74F8NP",
@@ -97,7 +99,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 3
+      "deal_number": 3,
+      "deal_id": "#74F8NP"
     },
     {
       "asin": "B0B4SWGHRT",
@@ -130,7 +133,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 4
+      "deal_number": 4,
+      "deal_id": "#SWGHRT"
     },
     {
       "asin": "B000GFEYU6",
@@ -161,7 +165,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 5
+      "deal_number": 5,
+      "deal_id": "#GFEYU6"
     },
     {
       "asin": "B07D8RCL6C",
@@ -194,7 +199,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 6
+      "deal_number": 6,
+      "deal_id": "#8RCL6C"
     },
     {
       "asin": "B08TWV3S41",
@@ -227,7 +233,8 @@
         "has_prime": true
       },
       "score": 7.5,
-      "deal_number": 7
+      "deal_number": 7,
+      "deal_id": "#WV3S41"
     },
     {
       "asin": "B09WX6PPK5",
@@ -260,7 +267,8 @@
         "has_prime": true
       },
       "score": 7.5,
-      "deal_number": 8
+      "deal_number": 8,
+      "deal_id": "#X6PPK5"
     },
     {
       "asin": "B09VYN3B8K",
@@ -292,7 +300,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 9
+      "deal_number": 9,
+      "deal_id": "#YN3B8K"
     },
     {
       "asin": "B09QM62V5K",
@@ -324,7 +333,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 10
+      "deal_number": 10,
+      "deal_id": "#M62V5K"
     },
     {
       "asin": "B09QFRN3D5",
@@ -357,7 +367,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 11
+      "deal_number": 11,
+      "deal_id": "#FRN3D5"
     },
     {
       "asin": "B07KT9FY31",
@@ -390,7 +401,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 12
+      "deal_number": 12,
+      "deal_id": "#T9FY31"
     },
     {
       "asin": "B0B9N2NY9M",
@@ -423,7 +435,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 13
+      "deal_number": 13,
+      "deal_id": "#N2NY9M"
     },
     {
       "asin": "B009GLG3F0",
@@ -454,7 +467,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 14
+      "deal_number": 14,
+      "deal_id": "#GLG3F0"
     },
     {
       "asin": "B0FP52VNY9",
@@ -487,7 +501,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 15
+      "deal_number": 15,
+      "deal_id": "#52VNY9"
     },
     {
       "asin": "B0924H777S",
@@ -520,7 +535,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 16
+      "deal_number": 16,
+      "deal_id": "#4H777S"
     },
     {
       "asin": "B08DHVPLZN",
@@ -552,7 +568,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 17
+      "deal_number": 17,
+      "deal_id": "#HVPLZN"
     },
     {
       "asin": "B0GHWK592M",
@@ -585,7 +602,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 18
+      "deal_number": 18,
+      "deal_id": "#WK592M"
     },
     {
       "asin": "B09JC86WNK",
@@ -618,7 +636,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 19
+      "deal_number": 19,
+      "deal_id": "#C86WNK"
     },
     {
       "asin": "B0GV3YH2TL",
@@ -651,7 +670,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 20
+      "deal_number": 20,
+      "deal_id": "#3YH2TL"
     }
   ],
   "by_category": {
@@ -686,7 +706,8 @@
           "has_prime": true
         },
         "score": 8.5,
-        "deal_number": 1
+        "deal_number": 1,
+        "deal_id": "#91LZBY"
       },
       {
         "asin": "B08PDDSDHY",
@@ -718,7 +739,8 @@
           "has_prime": true
         },
         "score": 8.0,
-        "deal_number": 2
+        "deal_number": 2,
+        "deal_id": "#DDSDHY"
       },
       {
         "asin": "B0DJVFX2KY",
@@ -751,7 +773,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 77
+        "deal_number": 77,
+        "deal_id": "#VFX2KY"
       }
     ],
     "Soins pour la peau": [
@@ -786,7 +809,8 @@
           "has_prime": true
         },
         "score": 8.0,
-        "deal_number": 3
+        "deal_number": 3,
+        "deal_id": "#74F8NP"
       },
       {
         "asin": "B0DL92QM79",
@@ -819,7 +843,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 92
+        "deal_number": 92,
+        "deal_id": "#92QM79"
       }
     ],
     "Loisirs créatifs": [
@@ -854,7 +879,8 @@
           "has_prime": true
         },
         "score": 8.0,
-        "deal_number": 4
+        "deal_number": 4,
+        "deal_id": "#SWGHRT"
       }
     ],
     "Papeterie": [
@@ -887,7 +913,8 @@
           "has_prime": true
         },
         "score": 8.0,
-        "deal_number": 5
+        "deal_number": 5,
+        "deal_id": "#GFEYU6"
       }
     ],
     "Piles, chargeurs et testeurs": [
@@ -922,7 +949,8 @@
           "has_prime": true
         },
         "score": 8.0,
-        "deal_number": 6
+        "deal_number": 6,
+        "deal_id": "#8RCL6C"
       }
     ],
     "Coiffure et soins des cheveux": [
@@ -957,7 +985,8 @@
           "has_prime": true
         },
         "score": 7.5,
-        "deal_number": 7
+        "deal_number": 7,
+        "deal_id": "#WV3S41"
       },
       {
         "asin": "B09WX6PPK5",
@@ -990,7 +1019,8 @@
           "has_prime": true
         },
         "score": 7.5,
-        "deal_number": 8
+        "deal_number": 8,
+        "deal_id": "#X6PPK5"
       },
       {
         "asin": "B0D2J7WZ5X",
@@ -1022,7 +1052,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 39
+        "deal_number": 39,
+        "deal_id": "#J7WZ5X"
       }
     ],
     "Ameublement et décoration": [
@@ -1056,7 +1087,8 @@
           "has_prime": true
         },
         "score": 7.0,
-        "deal_number": 9
+        "deal_number": 9,
+        "deal_id": "#YN3B8K"
       },
       {
         "asin": "B08DHVPLZN",
@@ -1088,7 +1120,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 17
+        "deal_number": 17,
+        "deal_id": "#HVPLZN"
       },
       {
         "asin": "B07BDFW1Y7",
@@ -1121,7 +1154,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 40
+        "deal_number": 40,
+        "deal_id": "#DFW1Y7"
       },
       {
         "asin": "B0B3WTJL5M",
@@ -1153,7 +1187,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 41
+        "deal_number": 41,
+        "deal_id": "#WTJL5M"
       },
       {
         "asin": "B0D7MMBC8W",
@@ -1185,7 +1220,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 42
+        "deal_number": 42,
+        "deal_id": "#MMBC8W"
       },
       {
         "asin": "B0DH261ZN6",
@@ -1217,7 +1253,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 57
+        "deal_number": 57,
+        "deal_id": "#261ZN6"
       },
       {
         "asin": "B0727PTRVL",
@@ -1249,7 +1286,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 75
+        "deal_number": 75,
+        "deal_id": "#7PTRVL"
       },
       {
         "asin": "B09HKCSKBM",
@@ -1282,7 +1320,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 122
+        "deal_number": 122,
+        "deal_id": "#KCSKBM"
       },
       {
         "asin": "B0DZ6B3ZC4",
@@ -1315,7 +1354,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 123
+        "deal_number": 123,
+        "deal_id": "#6B3ZC4"
       },
       {
         "asin": "B0FKG93C3Y",
@@ -1347,7 +1387,8 @@
           "has_prime": true
         },
         "score": 2.5,
-        "deal_number": 131
+        "deal_number": 131,
+        "deal_id": "#G93C3Y"
       },
       {
         "asin": "B0GSTJPG4T",
@@ -1379,7 +1420,8 @@
           "has_prime": true
         },
         "score": 2.0,
-        "deal_number": 132
+        "deal_number": 132,
+        "deal_id": "#TJPG4T"
       },
       {
         "asin": "B0GR8M72S6",
@@ -1446,7 +1488,8 @@
           "has_prime": true
         },
         "score": 7.0,
-        "deal_number": 10
+        "deal_number": 10,
+        "deal_id": "#M62V5K"
       },
       {
         "asin": "B0DYF5681J",
@@ -1478,7 +1521,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 83
+        "deal_number": 83,
+        "deal_id": "#F5681J"
       }
     ],
     "Chiens": [
@@ -1513,7 +1557,8 @@
           "has_prime": true
         },
         "score": 7.0,
-        "deal_number": 11
+        "deal_number": 11,
+        "deal_id": "#FRN3D5"
       },
       {
         "asin": "B004L8R5VE",
@@ -1546,7 +1591,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 36
+        "deal_number": 36,
+        "deal_id": "#L8R5VE"
       }
     ],
     "Barbecue et repas en extérieur": [
@@ -1581,7 +1627,8 @@
           "has_prime": true
         },
         "score": 7.0,
-        "deal_number": 12
+        "deal_number": 12,
+        "deal_id": "#T9FY31"
       },
       {
         "asin": "B0GR69XLR5",
@@ -1614,7 +1661,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 96
+        "deal_number": 96,
+        "deal_id": "#69XLR5"
       }
     ],
     "Bien-être et massage": [
@@ -1649,7 +1697,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 13
+        "deal_number": 13,
+        "deal_id": "#N2NY9M"
       },
       {
         "asin": "B0F21LFFBG",
@@ -1682,7 +1731,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 23
+        "deal_number": 23,
+        "deal_id": "#1LFFBG"
       },
       {
         "asin": "B0D639G18T",
@@ -1715,7 +1765,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 62
+        "deal_number": 62,
+        "deal_id": "#39G18T"
       }
     ],
     "Petit électroménager": [
@@ -1748,7 +1799,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 14
+        "deal_number": 14,
+        "deal_id": "#GLG3F0"
       },
       {
         "asin": "B0DX1SXL3R",
@@ -1781,7 +1833,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 34
+        "deal_number": 34,
+        "deal_id": "#1SXL3R"
       },
       {
         "asin": "B09D7QRK2R",
@@ -1813,7 +1866,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 43
+        "deal_number": 43,
+        "deal_id": "#7QRK2R"
       }
     ],
     "Accessoires": [
@@ -1848,7 +1902,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 15
+        "deal_number": 15,
+        "deal_id": "#52VNY9"
       },
       {
         "asin": "B0CQ7YVG9M",
@@ -1881,7 +1936,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 25
+        "deal_number": 25,
+        "deal_id": "#7YVG9M"
       },
       {
         "asin": "B0FL4VMFDN",
@@ -1914,7 +1970,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 44
+        "deal_number": 44,
+        "deal_id": "#4VMFDN"
       },
       {
         "asin": "B09TZXRV3B",
@@ -1947,7 +2004,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 49
+        "deal_number": 49,
+        "deal_id": "#ZXRV3B"
       },
       {
         "asin": "B07HKJZCVL",
@@ -1980,7 +2038,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 68
+        "deal_number": 68,
+        "deal_id": "#KJZCVL"
       }
     ],
     "Vernis à ongles et manucure": [
@@ -2015,7 +2074,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 16
+        "deal_number": 16,
+        "deal_id": "#4H777S"
       },
       {
         "asin": "B0CT3PNGS1",
@@ -2048,7 +2108,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 31
+        "deal_number": 31,
+        "deal_id": "#3PNGS1"
       },
       {
         "asin": "B0DWXBN442",
@@ -2081,7 +2142,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 60
+        "deal_number": 60,
+        "deal_id": "#XBN442"
       },
       {
         "asin": "B09SH4ZNZQ",
@@ -2114,7 +2176,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 89
+        "deal_number": 89,
+        "deal_id": "#H4ZNZQ"
       },
       {
         "asin": "B0B8H8SCV7",
@@ -2146,7 +2209,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 93
+        "deal_number": 93,
+        "deal_id": "#H8SCV7"
       },
       {
         "asin": "B0CFVNWSV9",
@@ -2179,7 +2243,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 114
+        "deal_number": 114,
+        "deal_id": "#VNWSV9"
       }
     ],
     "Casques, écouteurs et accessoires": [
@@ -2214,7 +2279,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 18
+        "deal_number": 18,
+        "deal_id": "#WK592M"
       },
       {
         "asin": "B0GV3YH2TL",
@@ -2247,7 +2313,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 20
+        "deal_number": 20,
+        "deal_id": "#3YH2TL"
       },
       {
         "asin": "B0GQ9W3LTG",
@@ -2280,7 +2347,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 24
+        "deal_number": 24,
+        "deal_id": "#9W3LTG"
       },
       {
         "asin": "B0GQFQCZ48",
@@ -2312,7 +2380,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 28
+        "deal_number": 28,
+        "deal_id": "#FQCZ48"
       }
     ],
     "Fitness et musculation": [
@@ -2347,7 +2416,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 19
+        "deal_number": 19,
+        "deal_id": "#C86WNK"
       },
       {
         "asin": "B0FDF7CT3G",
@@ -2380,7 +2450,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 78
+        "deal_number": 78,
+        "deal_id": "#F7CT3G"
       }
     ],
     "Téléphones portables et accessoires": [
@@ -2415,7 +2486,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 21
+        "deal_number": 21,
+        "deal_id": "#L4YW73"
       },
       {
         "asin": "B0DC93Z911",
@@ -2448,7 +2520,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 53
+        "deal_number": 53,
+        "deal_id": "#93Z911"
       },
       {
         "asin": "B0FT43BDPJ",
@@ -2481,7 +2554,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 58
+        "deal_number": 58,
+        "deal_id": "#43BDPJ"
       },
       {
         "asin": "B0D9VFRMV6",
@@ -2514,7 +2588,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 85
+        "deal_number": 85,
+        "deal_id": "#VFRMV6"
       },
       {
         "asin": "B0G1H1H619",
@@ -2547,7 +2622,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 90
+        "deal_number": 90,
+        "deal_id": "#H1H619"
       },
       {
         "asin": "B0CYT277T6",
@@ -2580,7 +2656,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 99
+        "deal_number": 99,
+        "deal_id": "#T277T6"
       }
     ],
     "Technologie portable": [
@@ -2615,7 +2692,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 22
+        "deal_number": 22,
+        "deal_id": "#GTYYW6"
       },
       {
         "asin": "B0CYC66YCL",
@@ -2648,7 +2726,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 33
+        "deal_number": 33,
+        "deal_id": "#C66YCL"
       },
       {
         "asin": "B0F5WJTPG8",
@@ -2681,7 +2760,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 111
+        "deal_number": 111,
+        "deal_id": "#WJTPG8"
       }
     ],
     "PC": [
@@ -2716,7 +2796,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 26
+        "deal_number": 26,
+        "deal_id": "#ZD724V"
       },
       {
         "asin": "B01H6KXGEI",
@@ -2749,7 +2830,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 32
+        "deal_number": 32,
+        "deal_id": "#6KXGEI"
       }
     ],
     "Tablettes tactiles": [
@@ -2784,7 +2866,8 @@
           "has_prime": true
         },
         "score": 6.5,
-        "deal_number": 27
+        "deal_number": 27,
+        "deal_id": "#G28PYT"
       },
       {
         "asin": "B0FBKYTF6N",
@@ -2817,7 +2900,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 124
+        "deal_number": 124,
+        "deal_id": "#KYTF6N"
       }
     ],
     "Tondeuses et outillage de jardin motorisé": [
@@ -2851,7 +2935,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 29
+        "deal_number": 29,
+        "deal_id": "#QLPD85"
       },
       {
         "asin": "B008A3QH06",
@@ -2878,7 +2963,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 46
+        "deal_number": 46,
+        "deal_id": "#A3QH06"
       },
       {
         "asin": "B0GQ66HJFW",
@@ -2910,7 +2996,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 125
+        "deal_number": 125,
+        "deal_id": "#66HJFW"
       }
     ],
     "Bagages, sacs de voyage et accessoires": [
@@ -2945,7 +3032,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 30
+        "deal_number": 30,
+        "deal_id": "#F968PX"
       }
     ],
     "Construction": [
@@ -2979,7 +3067,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 35
+        "deal_number": 35,
+        "deal_id": "#VJLVDT"
       },
       {
         "asin": "B07V3M5F3Y",
@@ -3012,7 +3101,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 66
+        "deal_number": 66,
+        "deal_id": "#3M5F3Y"
       }
     ],
     "Rasage et épilation": [
@@ -3047,7 +3137,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 37
+        "deal_number": 37,
+        "deal_id": "#KBWQCQ"
       },
       {
         "asin": "B0DTTLWTQ6",
@@ -3080,7 +3171,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 59
+        "deal_number": 59,
+        "deal_id": "#TLWTQ6"
       },
       {
         "asin": "B0G6X2W66S",
@@ -3113,7 +3205,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 79
+        "deal_number": 79,
+        "deal_id": "#X2W66S"
       }
     ],
     "Poupées et accessoires": [
@@ -3148,7 +3241,8 @@
           "has_prime": true
         },
         "score": 6.0,
-        "deal_number": 38
+        "deal_number": 38,
+        "deal_id": "#BCJGD2"
       }
     ],
     "Photo et caméscopes": [
@@ -3182,7 +3276,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 45
+        "deal_number": 45,
+        "deal_id": "#G7FMKH"
       },
       {
         "asin": "B0DJ8HZJZR",
@@ -3215,7 +3310,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 108
+        "deal_number": 108,
+        "deal_id": "#8HZJZR"
       },
       {
         "asin": "B0FLXQVTLT",
@@ -3248,7 +3344,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 119
+        "deal_number": 119,
+        "deal_id": "#XQVTLT"
       },
       {
         "asin": "B0F9XRN68K",
@@ -3281,7 +3378,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 126
+        "deal_number": 126,
+        "deal_id": "#XRN68K"
       }
     ],
     "Matériel et fournitures médicales": [
@@ -3316,7 +3414,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 47
+        "deal_number": 47,
+        "deal_id": "#1DD59C"
       },
       {
         "asin": "B09ZY5MQWH",
@@ -3349,7 +3448,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 94
+        "deal_number": 94,
+        "deal_id": "#Y5MQWH"
       }
     ],
     "Mobilier de jardin": [
@@ -3384,7 +3484,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 48
+        "deal_number": 48,
+        "deal_id": "#8W9G4P"
       },
       {
         "asin": "B0GNTHZ4KV",
@@ -3417,7 +3518,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 63
+        "deal_number": 63,
+        "deal_id": "#THZ4KV"
       },
       {
         "asin": "B07M9BG6ZR",
@@ -3449,7 +3551,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 65
+        "deal_number": 65,
+        "deal_id": "#9BG6ZR"
       },
       {
         "asin": "B0B3DR145P",
@@ -3481,7 +3584,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 112
+        "deal_number": 112,
+        "deal_id": "#DR145P"
       },
       {
         "asin": "B0GS6DRDYS",
@@ -3513,7 +3617,8 @@
           "has_prime": true
         },
         "score": 1.0,
-        "deal_number": 133
+        "deal_number": 133,
+        "deal_id": "#6DRDYS"
       }
     ],
     "Luminaires extérieur": [
@@ -3547,7 +3652,8 @@
           "has_prime": true
         },
         "score": 5.5,
-        "deal_number": 50
+        "deal_number": 50,
+        "deal_id": "#GJRTT4"
       },
       {
         "asin": "B0GFJ1X1F4",
@@ -3580,7 +3686,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 115
+        "deal_number": 115,
+        "deal_id": "#J1X1F4"
       },
       {
         "asin": "B07Y1QTVG2",
@@ -3613,7 +3720,8 @@
           "has_prime": true
         },
         "score": 2.5,
-        "deal_number": 130
+        "deal_number": 130,
+        "deal_id": "#1QTVG2"
       }
     ],
     "Aspirateurs, entretien des sols et nettoyeurs de vitres": [
@@ -3647,7 +3755,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 51
+        "deal_number": 51,
+        "deal_id": "#8Z2BTH"
       },
       {
         "asin": "B0G2RJLYDL",
@@ -3679,7 +3788,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 64
+        "deal_number": 64,
+        "deal_id": "#RJLYDL"
       },
       {
         "asin": "B0G4NBBZLG",
@@ -3711,7 +3821,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 98
+        "deal_number": 98,
+        "deal_id": "#NBBZLG"
       },
       {
         "asin": "B0FNC1GL7P",
@@ -3743,7 +3854,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 109
+        "deal_number": 109,
+        "deal_id": "#C1GL7P"
       },
       {
         "asin": "B0F4QCGFJR",
@@ -3776,7 +3888,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 116
+        "deal_number": 116,
+        "deal_id": "#QCGFJR"
       },
       {
         "asin": "B0DGLFZMWH",
@@ -3808,7 +3921,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 117
+        "deal_number": 117,
+        "deal_id": "#LFZMWH"
       },
       {
         "asin": "B0DJVD4R8S",
@@ -3840,7 +3954,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 120
+        "deal_number": 120,
+        "deal_id": "#VD4R8S"
       }
     ],
     "Électricité": [
@@ -3874,7 +3989,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 52
+        "deal_number": 52,
+        "deal_id": "#JZP36Y"
       },
       {
         "asin": "B08CKFKX7N",
@@ -3907,7 +4023,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 87
+        "deal_number": 87,
+        "deal_id": "#KFKX7N"
       }
     ],
     "Siège auto et accessoires": [
@@ -3942,7 +4059,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 54
+        "deal_number": 54,
+        "deal_id": "#S67WJ3"
       }
     ],
     "Chats": [
@@ -3977,7 +4095,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 55
+        "deal_number": 55,
+        "deal_id": "#BF98CW"
       },
       {
         "asin": "B0FF48X5N8",
@@ -4010,7 +4129,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 80
+        "deal_number": 80,
+        "deal_id": "#48X5N8"
       }
     ],
     "Composants et pièces de remplacement": [
@@ -4045,7 +4165,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 56
+        "deal_number": 56,
+        "deal_id": "#TN57C1"
       },
       {
         "asin": "B0BD7SPHCG",
@@ -4077,7 +4198,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 104
+        "deal_number": 104,
+        "deal_id": "#7SPHCG"
       }
     ],
     "Fers, centrales vapeur et accessoires": [
@@ -4111,7 +4233,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 61
+        "deal_number": 61,
+        "deal_id": "#GHH2CW"
       }
     ],
     "Centrifugeuses, extracteurs de jus et presses-agrumes électriques": [
@@ -4145,7 +4268,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 67
+        "deal_number": 67,
+        "deal_id": "#SX8X2C"
       }
     ],
     "Jeux électroniques pour enfants": [
@@ -4180,7 +4304,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 69
+        "deal_number": 69,
+        "deal_id": "#CVXD71"
       }
     ],
     "Hygiène dentaire": [
@@ -4215,7 +4340,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 70
+        "deal_number": 70,
+        "deal_id": "#T6XPCM"
       }
     ],
     "Literie et linge de maison": [
@@ -4250,7 +4376,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 71
+        "deal_number": 71,
+        "deal_id": "#18FVHY"
       }
     ],
     "Imprimantes et accessoires": [
@@ -4285,7 +4412,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 72
+        "deal_number": 72,
+        "deal_id": "#RP47TQ"
       },
       {
         "asin": "B0DK6VJHZ2",
@@ -4318,7 +4446,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 110
+        "deal_number": 110,
+        "deal_id": "#6VJHZ2"
       }
     ],
     "Outillage à main et électroportatif": [
@@ -4352,7 +4481,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 73
+        "deal_number": 73,
+        "deal_id": "#B4MKD5"
       },
       {
         "asin": "B0G5Z51M9M",
@@ -4385,7 +4515,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 113
+        "deal_number": 113,
+        "deal_id": "#Z51M9M"
       }
     ],
     "Microphones et packs": [
@@ -4420,7 +4551,8 @@
           "has_prime": true
         },
         "score": 5.0,
-        "deal_number": 74
+        "deal_number": 74,
+        "deal_id": "#6L96Z9"
       }
     ],
     "Santé et premiers soins": [
@@ -4455,7 +4587,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 76
+        "deal_number": 76,
+        "deal_id": "#X51LS3"
       }
     ],
     "Univers Hi-Fi": [
@@ -4489,7 +4622,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 81
+        "deal_number": 81,
+        "deal_id": "#RFNKNL"
       }
     ],
     "Chambre de bébé": [
@@ -4524,7 +4658,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 82
+        "deal_number": 82,
+        "deal_id": "#4XJ5NZ"
       }
     ],
     "Ordinateurs portables": [
@@ -4559,7 +4694,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 84
+        "deal_number": 84,
+        "deal_id": "#2LM7ZM"
       },
       {
         "asin": "B0F54J5435",
@@ -4590,7 +4726,8 @@
           "has_prime": true
         },
         "score": 2.5,
-        "deal_number": 129
+        "deal_number": 129,
+        "deal_id": "#4J5435"
       }
     ],
     "Cuisines et salles de bain": [
@@ -4625,7 +4762,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 86
+        "deal_number": 86,
+        "deal_id": "#PWTN3X"
       }
     ],
     "Rangement et stockage extérieurs": [
@@ -4659,7 +4797,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 88
+        "deal_number": 88,
+        "deal_id": "#T7SDTV"
       }
     ],
     "Maquillage": [
@@ -4694,7 +4833,8 @@
           "has_prime": true
         },
         "score": 4.5,
-        "deal_number": 91
+        "deal_number": 91,
+        "deal_id": "#8Y8N4G"
       }
     ],
     "Matériels d'arrosage et outils pour jardins": [
@@ -4728,7 +4868,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 95
+        "deal_number": 95,
+        "deal_id": "#NNKX2R"
       },
       {
         "asin": "B0GF7281P6",
@@ -4761,7 +4902,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 101
+        "deal_number": 101,
+        "deal_id": "#7281P6"
       }
     ],
     "Piscines, bains à remous et accessoires": [
@@ -4796,7 +4938,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 97
+        "deal_number": 97,
+        "deal_id": "#VHGG7G"
       },
       {
         "asin": "B0DXZYMB2S",
@@ -4829,7 +4972,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 100
+        "deal_number": 100,
+        "deal_id": "#ZYMB2S"
       }
     ],
     "Fours, cuisinières et tables de cuisson": [
@@ -4864,7 +5008,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 102
+        "deal_number": 102,
+        "deal_id": "#GW3XC1"
       }
     ],
     "Café, thé et boissons": [
@@ -4899,7 +5044,8 @@
           "has_prime": true
         },
         "score": 4.0,
-        "deal_number": 103
+        "deal_number": 103,
+        "deal_id": "#QB4KH4"
       }
     ],
     "Vitamines, minéraux et compléments": [
@@ -4933,7 +5079,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 105
+        "deal_number": 105,
+        "deal_id": "#YY416J"
       }
     ],
     "Café, thé et expresso": [
@@ -4967,7 +5114,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 106
+        "deal_number": 106,
+        "deal_id": "#2N95KY"
       }
     ],
     "Guirlandes lumineuses": [
@@ -5002,7 +5150,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 107
+        "deal_number": 107,
+        "deal_id": "#Q2TMBQ"
       }
     ],
     "Accessoires auto": [
@@ -5037,7 +5186,8 @@
           "has_prime": true
         },
         "score": 3.5,
-        "deal_number": 118
+        "deal_number": 118,
+        "deal_id": "#TSCSVD"
       },
       {
         "asin": "B0GF2HFPG5",
@@ -5070,7 +5220,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 128
+        "deal_number": 128,
+        "deal_id": "#2HFPG5"
       }
     ],
     "Écrans PC": [
@@ -5105,7 +5256,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 121
+        "deal_number": 121,
+        "deal_id": "#FM7BXW"
       },
       {
         "asin": "B0DWSFP94F",
@@ -5138,7 +5290,8 @@
           "has_prime": true
         },
         "score": 1.0,
-        "deal_number": 134
+        "deal_number": 134,
+        "deal_id": "#SFP94F"
       }
     ],
     "Sécurité de bébé": [
@@ -5173,7 +5326,8 @@
           "has_prime": true
         },
         "score": 3.0,
-        "deal_number": 127
+        "deal_number": 127,
+        "deal_id": "#8JHJDJ"
       }
     ]
   },
@@ -5208,7 +5362,8 @@
         "has_prime": true
       },
       "score": 8.5,
-      "deal_number": 1
+      "deal_number": 1,
+      "deal_id": "#91LZBY"
     },
     {
       "asin": "B08PDDSDHY",
@@ -5240,7 +5395,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 2
+      "deal_number": 2,
+      "deal_id": "#DDSDHY"
     },
     {
       "asin": "B07N74F8NP",
@@ -5273,7 +5429,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 3
+      "deal_number": 3,
+      "deal_id": "#74F8NP"
     },
     {
       "asin": "B0B4SWGHRT",
@@ -5306,7 +5463,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 4
+      "deal_number": 4,
+      "deal_id": "#SWGHRT"
     },
     {
       "asin": "B000GFEYU6",
@@ -5337,7 +5495,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 5
+      "deal_number": 5,
+      "deal_id": "#GFEYU6"
     },
     {
       "asin": "B07D8RCL6C",
@@ -5370,7 +5529,8 @@
         "has_prime": true
       },
       "score": 8.0,
-      "deal_number": 6
+      "deal_number": 6,
+      "deal_id": "#8RCL6C"
     },
     {
       "asin": "B08TWV3S41",
@@ -5403,7 +5563,8 @@
         "has_prime": true
       },
       "score": 7.5,
-      "deal_number": 7
+      "deal_number": 7,
+      "deal_id": "#WV3S41"
     },
     {
       "asin": "B09WX6PPK5",
@@ -5436,7 +5597,8 @@
         "has_prime": true
       },
       "score": 7.5,
-      "deal_number": 8
+      "deal_number": 8,
+      "deal_id": "#X6PPK5"
     },
     {
       "asin": "B09VYN3B8K",
@@ -5468,7 +5630,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 9
+      "deal_number": 9,
+      "deal_id": "#YN3B8K"
     },
     {
       "asin": "B09QM62V5K",
@@ -5500,7 +5663,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 10
+      "deal_number": 10,
+      "deal_id": "#M62V5K"
     },
     {
       "asin": "B09QFRN3D5",
@@ -5533,7 +5697,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 11
+      "deal_number": 11,
+      "deal_id": "#FRN3D5"
     },
     {
       "asin": "B07KT9FY31",
@@ -5566,7 +5731,8 @@
         "has_prime": true
       },
       "score": 7.0,
-      "deal_number": 12
+      "deal_number": 12,
+      "deal_id": "#T9FY31"
     },
     {
       "asin": "B0B9N2NY9M",
@@ -5599,7 +5765,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 13
+      "deal_number": 13,
+      "deal_id": "#N2NY9M"
     },
     {
       "asin": "B009GLG3F0",
@@ -5630,7 +5797,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 14
+      "deal_number": 14,
+      "deal_id": "#GLG3F0"
     },
     {
       "asin": "B0FP52VNY9",
@@ -5663,7 +5831,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 15
+      "deal_number": 15,
+      "deal_id": "#52VNY9"
     },
     {
       "asin": "B0924H777S",
@@ -5696,7 +5865,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 16
+      "deal_number": 16,
+      "deal_id": "#4H777S"
     },
     {
       "asin": "B08DHVPLZN",
@@ -5728,7 +5898,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 17
+      "deal_number": 17,
+      "deal_id": "#HVPLZN"
     },
     {
       "asin": "B0GHWK592M",
@@ -5761,7 +5932,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 18
+      "deal_number": 18,
+      "deal_id": "#WK592M"
     },
     {
       "asin": "B09JC86WNK",
@@ -5794,7 +5966,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 19
+      "deal_number": 19,
+      "deal_id": "#C86WNK"
     },
     {
       "asin": "B0GV3YH2TL",
@@ -5827,7 +6000,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 20
+      "deal_number": 20,
+      "deal_id": "#3YH2TL"
     },
     {
       "asin": "B0FJL4YW73",
@@ -5860,7 +6034,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 21
+      "deal_number": 21,
+      "deal_id": "#L4YW73"
     },
     {
       "asin": "B0G8GTYYW6",
@@ -5893,7 +6068,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 22
+      "deal_number": 22,
+      "deal_id": "#GTYYW6"
     },
     {
       "asin": "B0F21LFFBG",
@@ -5926,7 +6102,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 23
+      "deal_number": 23,
+      "deal_id": "#1LFFBG"
     },
     {
       "asin": "B0GQ9W3LTG",
@@ -5959,7 +6136,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 24
+      "deal_number": 24,
+      "deal_id": "#9W3LTG"
     },
     {
       "asin": "B0CQ7YVG9M",
@@ -5992,7 +6170,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 25
+      "deal_number": 25,
+      "deal_id": "#7YVG9M"
     },
     {
       "asin": "B0B3ZD724V",
@@ -6025,7 +6204,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 26
+      "deal_number": 26,
+      "deal_id": "#ZD724V"
     },
     {
       "asin": "B0GSG28PYT",
@@ -6058,7 +6238,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 27
+      "deal_number": 27,
+      "deal_id": "#G28PYT"
     },
     {
       "asin": "B0GQFQCZ48",
@@ -6090,7 +6271,8 @@
         "has_prime": true
       },
       "score": 6.5,
-      "deal_number": 28
+      "deal_number": 28,
+      "deal_id": "#FQCZ48"
     },
     {
       "asin": "B0B1QLPD85",
@@ -6122,7 +6304,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 29
+      "deal_number": 29,
+      "deal_id": "#QLPD85"
     },
     {
       "asin": "B0DXF968PX",
@@ -6155,7 +6338,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 30
+      "deal_number": 30,
+      "deal_id": "#F968PX"
     },
     {
       "asin": "B0CT3PNGS1",
@@ -6188,7 +6372,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 31
+      "deal_number": 31,
+      "deal_id": "#3PNGS1"
     },
     {
       "asin": "B01H6KXGEI",
@@ -6221,7 +6406,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 32
+      "deal_number": 32,
+      "deal_id": "#6KXGEI"
     },
     {
       "asin": "B0CYC66YCL",
@@ -6254,7 +6440,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 33
+      "deal_number": 33,
+      "deal_id": "#C66YCL"
     },
     {
       "asin": "B0DX1SXL3R",
@@ -6287,7 +6474,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 34
+      "deal_number": 34,
+      "deal_id": "#1SXL3R"
     },
     {
       "asin": "B0CJVJLVDT",
@@ -6319,7 +6507,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 35
+      "deal_number": 35,
+      "deal_id": "#VJLVDT"
     },
     {
       "asin": "B004L8R5VE",
@@ -6352,7 +6541,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 36
+      "deal_number": 36,
+      "deal_id": "#L8R5VE"
     },
     {
       "asin": "B0C1KBWQCQ",
@@ -6385,7 +6575,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 37
+      "deal_number": 37,
+      "deal_id": "#KBWQCQ"
     },
     {
       "asin": "B0DQBCJGD2",
@@ -6418,7 +6609,8 @@
         "has_prime": true
       },
       "score": 6.0,
-      "deal_number": 38
+      "deal_number": 38,
+      "deal_id": "#BCJGD2"
     },
     {
       "asin": "B0D2J7WZ5X",
@@ -6450,7 +6642,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 39
+      "deal_number": 39,
+      "deal_id": "#J7WZ5X"
     },
     {
       "asin": "B07BDFW1Y7",
@@ -6483,7 +6676,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 40
+      "deal_number": 40,
+      "deal_id": "#DFW1Y7"
     },
     {
       "asin": "B0B3WTJL5M",
@@ -6515,7 +6709,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 41
+      "deal_number": 41,
+      "deal_id": "#WTJL5M"
     },
     {
       "asin": "B0D7MMBC8W",
@@ -6547,7 +6742,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 42
+      "deal_number": 42,
+      "deal_id": "#MMBC8W"
     },
     {
       "asin": "B09D7QRK2R",
@@ -6579,7 +6775,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 43
+      "deal_number": 43,
+      "deal_id": "#7QRK2R"
     },
     {
       "asin": "B0FL4VMFDN",
@@ -6612,7 +6809,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 44
+      "deal_number": 44,
+      "deal_id": "#4VMFDN"
     },
     {
       "asin": "B09PG7FMKH",
@@ -6644,7 +6842,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 45
+      "deal_number": 45,
+      "deal_id": "#G7FMKH"
     },
     {
       "asin": "B008A3QH06",
@@ -6671,7 +6870,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 46
+      "deal_number": 46,
+      "deal_id": "#A3QH06"
     },
     {
       "asin": "B0D31DD59C",
@@ -6704,7 +6904,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 47
+      "deal_number": 47,
+      "deal_id": "#1DD59C"
     },
     {
       "asin": "B08K8W9G4P",
@@ -6737,7 +6938,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 48
+      "deal_number": 48,
+      "deal_id": "#8W9G4P"
     },
     {
       "asin": "B09TZXRV3B",
@@ -6770,7 +6972,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 49
+      "deal_number": 49,
+      "deal_id": "#ZXRV3B"
     },
     {
       "asin": "B089GJRTT4",
@@ -6802,7 +7005,8 @@
         "has_prime": true
       },
       "score": 5.5,
-      "deal_number": 50
+      "deal_number": 50,
+      "deal_id": "#GJRTT4"
     },
     {
       "asin": "B0G48Z2BTH",
@@ -6834,7 +7038,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 51
+      "deal_number": 51,
+      "deal_id": "#8Z2BTH"
     },
     {
       "asin": "B0F9JZP36Y",
@@ -6866,7 +7071,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 52
+      "deal_number": 52,
+      "deal_id": "#JZP36Y"
     },
     {
       "asin": "B0DC93Z911",
@@ -6899,7 +7105,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 53
+      "deal_number": 53,
+      "deal_id": "#93Z911"
     },
     {
       "asin": "B0CHS67WJ3",
@@ -6932,7 +7139,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 54
+      "deal_number": 54,
+      "deal_id": "#S67WJ3"
     },
     {
       "asin": "B0F5BF98CW",
@@ -6965,7 +7173,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 55
+      "deal_number": 55,
+      "deal_id": "#BF98CW"
     },
     {
       "asin": "B0DMTN57C1",
@@ -6998,7 +7207,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 56
+      "deal_number": 56,
+      "deal_id": "#TN57C1"
     },
     {
       "asin": "B0DH261ZN6",
@@ -7030,7 +7240,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 57
+      "deal_number": 57,
+      "deal_id": "#261ZN6"
     },
     {
       "asin": "B0FT43BDPJ",
@@ -7063,7 +7274,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 58
+      "deal_number": 58,
+      "deal_id": "#43BDPJ"
     },
     {
       "asin": "B0DTTLWTQ6",
@@ -7096,7 +7308,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 59
+      "deal_number": 59,
+      "deal_id": "#TLWTQ6"
     },
     {
       "asin": "B0DWXBN442",
@@ -7129,7 +7342,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 60
+      "deal_number": 60,
+      "deal_id": "#XBN442"
     },
     {
       "asin": "B0BDGHH2CW",
@@ -7161,7 +7375,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 61
+      "deal_number": 61,
+      "deal_id": "#GHH2CW"
     },
     {
       "asin": "B0D639G18T",
@@ -7194,7 +7409,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 62
+      "deal_number": 62,
+      "deal_id": "#39G18T"
     },
     {
       "asin": "B0GNTHZ4KV",
@@ -7227,7 +7443,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 63
+      "deal_number": 63,
+      "deal_id": "#THZ4KV"
     },
     {
       "asin": "B0G2RJLYDL",
@@ -7259,7 +7476,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 64
+      "deal_number": 64,
+      "deal_id": "#RJLYDL"
     },
     {
       "asin": "B07M9BG6ZR",
@@ -7291,7 +7509,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 65
+      "deal_number": 65,
+      "deal_id": "#9BG6ZR"
     },
     {
       "asin": "B07V3M5F3Y",
@@ -7324,7 +7543,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 66
+      "deal_number": 66,
+      "deal_id": "#3M5F3Y"
     },
     {
       "asin": "B0FFSX8X2C",
@@ -7356,7 +7576,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 67
+      "deal_number": 67,
+      "deal_id": "#SX8X2C"
     },
     {
       "asin": "B07HKJZCVL",
@@ -7389,7 +7610,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 68
+      "deal_number": 68,
+      "deal_id": "#KJZCVL"
     },
     {
       "asin": "B0FPCVXD71",
@@ -7422,7 +7644,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 69
+      "deal_number": 69,
+      "deal_id": "#CVXD71"
     },
     {
       "asin": "B0CPT6XPCM",
@@ -7455,7 +7678,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 70
+      "deal_number": 70,
+      "deal_id": "#T6XPCM"
     },
     {
       "asin": "B0D418FVHY",
@@ -7488,7 +7712,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 71
+      "deal_number": 71,
+      "deal_id": "#18FVHY"
     },
     {
       "asin": "B0G2RP47TQ",
@@ -7521,7 +7746,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 72
+      "deal_number": 72,
+      "deal_id": "#RP47TQ"
     },
     {
       "asin": "B0BQB4MKD5",
@@ -7553,7 +7779,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 73
+      "deal_number": 73,
+      "deal_id": "#B4MKD5"
     },
     {
       "asin": "B09R6L96Z9",
@@ -7586,7 +7813,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 74
+      "deal_number": 74,
+      "deal_id": "#6L96Z9"
     },
     {
       "asin": "B0727PTRVL",
@@ -7618,7 +7846,8 @@
         "has_prime": true
       },
       "score": 5.0,
-      "deal_number": 75
+      "deal_number": 75,
+      "deal_id": "#7PTRVL"
     },
     {
       "asin": "B0D2X51LS3",
@@ -7651,7 +7880,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 76
+      "deal_number": 76,
+      "deal_id": "#X51LS3"
     },
     {
       "asin": "B0DJVFX2KY",
@@ -7684,7 +7914,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 77
+      "deal_number": 77,
+      "deal_id": "#VFX2KY"
     },
     {
       "asin": "B0FDF7CT3G",
@@ -7717,7 +7948,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 78
+      "deal_number": 78,
+      "deal_id": "#F7CT3G"
     },
     {
       "asin": "B0G6X2W66S",
@@ -7750,7 +7982,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 79
+      "deal_number": 79,
+      "deal_id": "#X2W66S"
     },
     {
       "asin": "B0FF48X5N8",
@@ -7783,7 +8016,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 80
+      "deal_number": 80,
+      "deal_id": "#48X5N8"
     },
     {
       "asin": "B0FMRFNKNL",
@@ -7815,7 +8049,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 81
+      "deal_number": 81,
+      "deal_id": "#RFNKNL"
     },
     {
       "asin": "B08J4XJ5NZ",
@@ -7848,7 +8083,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 82
+      "deal_number": 82,
+      "deal_id": "#4XJ5NZ"
     },
     {
       "asin": "B0DYF5681J",
@@ -7880,7 +8116,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 83
+      "deal_number": 83,
+      "deal_id": "#F5681J"
     },
     {
       "asin": "B0GS2LM7ZM",
@@ -7913,7 +8150,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 84
+      "deal_number": 84,
+      "deal_id": "#2LM7ZM"
     },
     {
       "asin": "B0D9VFRMV6",
@@ -7946,7 +8184,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 85
+      "deal_number": 85,
+      "deal_id": "#VFRMV6"
     },
     {
       "asin": "B0FLPWTN3X",
@@ -7979,7 +8218,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 86
+      "deal_number": 86,
+      "deal_id": "#PWTN3X"
     },
     {
       "asin": "B08CKFKX7N",
@@ -8012,7 +8252,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 87
+      "deal_number": 87,
+      "deal_id": "#KFKX7N"
     },
     {
       "asin": "B0DWT7SDTV",
@@ -8044,7 +8285,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 88
+      "deal_number": 88,
+      "deal_id": "#T7SDTV"
     },
     {
       "asin": "B09SH4ZNZQ",
@@ -8077,7 +8319,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 89
+      "deal_number": 89,
+      "deal_id": "#H4ZNZQ"
     },
     {
       "asin": "B0G1H1H619",
@@ -8110,7 +8353,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 90
+      "deal_number": 90,
+      "deal_id": "#H1H619"
     },
     {
       "asin": "B0DL8Y8N4G",
@@ -8143,7 +8387,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 91
+      "deal_number": 91,
+      "deal_id": "#8Y8N4G"
     },
     {
       "asin": "B0DL92QM79",
@@ -8176,7 +8421,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 92
+      "deal_number": 92,
+      "deal_id": "#92QM79"
     },
     {
       "asin": "B0B8H8SCV7",
@@ -8208,7 +8454,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 93
+      "deal_number": 93,
+      "deal_id": "#H8SCV7"
     },
     {
       "asin": "B09ZY5MQWH",
@@ -8241,7 +8488,8 @@
         "has_prime": true
       },
       "score": 4.5,
-      "deal_number": 94
+      "deal_number": 94,
+      "deal_id": "#Y5MQWH"
     },
     {
       "asin": "B0GLNNKX2R",
@@ -8273,7 +8521,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 95
+      "deal_number": 95,
+      "deal_id": "#NNKX2R"
     },
     {
       "asin": "B0GR69XLR5",
@@ -8306,7 +8555,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 96
+      "deal_number": 96,
+      "deal_id": "#69XLR5"
     },
     {
       "asin": "B0GQVHGG7G",
@@ -8339,7 +8589,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 97
+      "deal_number": 97,
+      "deal_id": "#VHGG7G"
     },
     {
       "asin": "B0G4NBBZLG",
@@ -8371,7 +8622,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 98
+      "deal_number": 98,
+      "deal_id": "#NBBZLG"
     },
     {
       "asin": "B0CYT277T6",
@@ -8404,7 +8656,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 99
+      "deal_number": 99,
+      "deal_id": "#T277T6"
     },
     {
       "asin": "B0DXZYMB2S",
@@ -8437,7 +8690,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 100
+      "deal_number": 100,
+      "deal_id": "#ZYMB2S"
     },
     {
       "asin": "B0GF7281P6",
@@ -8470,7 +8724,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 101
+      "deal_number": 101,
+      "deal_id": "#7281P6"
     },
     {
       "asin": "B0DLGW3XC1",
@@ -8503,7 +8758,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 102
+      "deal_number": 102,
+      "deal_id": "#GW3XC1"
     },
     {
       "asin": "B0DGQB4KH4",
@@ -8536,7 +8792,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 103
+      "deal_number": 103,
+      "deal_id": "#QB4KH4"
     },
     {
       "asin": "B0BD7SPHCG",
@@ -8568,7 +8825,8 @@
         "has_prime": true
       },
       "score": 4.0,
-      "deal_number": 104
+      "deal_number": 104,
+      "deal_id": "#7SPHCG"
     },
     {
       "asin": "B0C2YY416J",
@@ -8600,7 +8858,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 105
+      "deal_number": 105,
+      "deal_id": "#YY416J"
     },
     {
       "asin": "B0FY2N95KY",
@@ -8632,7 +8891,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 106
+      "deal_number": 106,
+      "deal_id": "#2N95KY"
     },
     {
       "asin": "B0DQQ2TMBQ",
@@ -8665,7 +8925,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 107
+      "deal_number": 107,
+      "deal_id": "#Q2TMBQ"
     },
     {
       "asin": "B0DJ8HZJZR",
@@ -8698,7 +8959,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 108
+      "deal_number": 108,
+      "deal_id": "#8HZJZR"
     },
     {
       "asin": "B0FNC1GL7P",
@@ -8730,7 +8992,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 109
+      "deal_number": 109,
+      "deal_id": "#C1GL7P"
     },
     {
       "asin": "B0DK6VJHZ2",
@@ -8763,7 +9026,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 110
+      "deal_number": 110,
+      "deal_id": "#6VJHZ2"
     },
     {
       "asin": "B0F5WJTPG8",
@@ -8796,7 +9060,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 111
+      "deal_number": 111,
+      "deal_id": "#WJTPG8"
     },
     {
       "asin": "B0B3DR145P",
@@ -8828,7 +9093,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 112
+      "deal_number": 112,
+      "deal_id": "#DR145P"
     },
     {
       "asin": "B0G5Z51M9M",
@@ -8861,7 +9127,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 113
+      "deal_number": 113,
+      "deal_id": "#Z51M9M"
     },
     {
       "asin": "B0CFVNWSV9",
@@ -8894,7 +9161,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 114
+      "deal_number": 114,
+      "deal_id": "#VNWSV9"
     },
     {
       "asin": "B0GFJ1X1F4",
@@ -8927,7 +9195,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 115
+      "deal_number": 115,
+      "deal_id": "#J1X1F4"
     },
     {
       "asin": "B0F4QCGFJR",
@@ -8960,7 +9229,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 116
+      "deal_number": 116,
+      "deal_id": "#QCGFJR"
     },
     {
       "asin": "B0DGLFZMWH",
@@ -8992,7 +9262,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 117
+      "deal_number": 117,
+      "deal_id": "#LFZMWH"
     },
     {
       "asin": "B0FFTSCSVD",
@@ -9025,7 +9296,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 118
+      "deal_number": 118,
+      "deal_id": "#TSCSVD"
     },
     {
       "asin": "B0FLXQVTLT",
@@ -9058,7 +9330,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 119
+      "deal_number": 119,
+      "deal_id": "#XQVTLT"
     },
     {
       "asin": "B0DJVD4R8S",
@@ -9090,7 +9363,8 @@
         "has_prime": true
       },
       "score": 3.5,
-      "deal_number": 120
+      "deal_number": 120,
+      "deal_id": "#VD4R8S"
     },
     {
       "asin": "B0DWFM7BXW",
@@ -9123,7 +9397,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 121
+      "deal_number": 121,
+      "deal_id": "#FM7BXW"
     },
     {
       "asin": "B09HKCSKBM",
@@ -9156,7 +9431,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 122
+      "deal_number": 122,
+      "deal_id": "#KCSKBM"
     },
     {
       "asin": "B0DZ6B3ZC4",
@@ -9189,7 +9465,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 123
+      "deal_number": 123,
+      "deal_id": "#6B3ZC4"
     },
     {
       "asin": "B0FBKYTF6N",
@@ -9222,7 +9499,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 124
+      "deal_number": 124,
+      "deal_id": "#KYTF6N"
     },
     {
       "asin": "B0GQ66HJFW",
@@ -9254,7 +9532,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 125
+      "deal_number": 125,
+      "deal_id": "#66HJFW"
     },
     {
       "asin": "B0F9XRN68K",
@@ -9287,7 +9566,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 126
+      "deal_number": 126,
+      "deal_id": "#XRN68K"
     },
     {
       "asin": "B0G58JHJDJ",
@@ -9320,7 +9600,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 127
+      "deal_number": 127,
+      "deal_id": "#8JHJDJ"
     },
     {
       "asin": "B0GF2HFPG5",
@@ -9353,7 +9634,8 @@
         "has_prime": true
       },
       "score": 3.0,
-      "deal_number": 128
+      "deal_number": 128,
+      "deal_id": "#2HFPG5"
     },
     {
       "asin": "B0F54J5435",
@@ -9384,7 +9666,8 @@
         "has_prime": true
       },
       "score": 2.5,
-      "deal_number": 129
+      "deal_number": 129,
+      "deal_id": "#4J5435"
     },
     {
       "asin": "B07Y1QTVG2",
@@ -9417,7 +9700,8 @@
         "has_prime": true
       },
       "score": 2.5,
-      "deal_number": 130
+      "deal_number": 130,
+      "deal_id": "#1QTVG2"
     },
     {
       "asin": "B0FKG93C3Y",
@@ -9449,7 +9733,8 @@
         "has_prime": true
       },
       "score": 2.5,
-      "deal_number": 131
+      "deal_number": 131,
+      "deal_id": "#G93C3Y"
     },
     {
       "asin": "B0GSTJPG4T",
@@ -9481,7 +9766,8 @@
         "has_prime": true
       },
       "score": 2.0,
-      "deal_number": 132
+      "deal_number": 132,
+      "deal_id": "#TJPG4T"
     },
     {
       "asin": "B0GS6DRDYS",
@@ -9513,7 +9799,8 @@
         "has_prime": true
       },
       "score": 1.0,
-      "deal_number": 133
+      "deal_number": 133,
+      "deal_id": "#6DRDYS"
     },
     {
       "asin": "B0DWSFP94F",
@@ -9546,7 +9833,8 @@
         "has_prime": true
       },
       "score": 1.0,
-      "deal_number": 134
+      "deal_number": 134,
+      "deal_id": "#SFP94F"
     },
     {
       "asin": "B0GR8M72S6",
