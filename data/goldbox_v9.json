@@ -1,0 +1,115 @@
+{
+  "scraped_at": "2026-04-13T19:00:34.157785",
+  "total_products": 1,
+  "min_discount": 20,
+  "top_deals": [
+    {
+      "asin": "B0GBWTN3LJ",
+      "url": "https://www.amazon.fr/dp/B0GBWTN3LJ",
+      "title_preview": "",
+      "price_flash": "Prix Flash: 48,90 €",
+      "original_price": "Le plus bas : 69,50 €",
+      "discount_text": "",
+      "category": "Rasage et épilation",
+      "has_prime": false,
+      "title": "King C. Gillette Tondeuse Barbe Homme PRO MAX Sans Fil Avec 40 Réglages Et 4 Sabots Interchangeables De La Tondeuse Electrique, Coffret Homme Comprend 1 Base De Recharge Et 1 Pochette Zippée",
+      "price": 48.9,
+      "price_original": 69.5,
+      "images": [
+        "https://m.media-amazon.com/images/I/8184UCab7gL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/51vOP8G-M0L.jpg",
+        "https://m.media-amazon.com/images/I/51WCAN+B0BL.jpg",
+        "https://m.media-amazon.com/images/I/51qpD1736PL.jpg",
+        "https://m.media-amazon.com/images/I/519EYdCrLnL.jpg",
+        "https://m.media-amazon.com/images/I/51So0OcuqcL.jpg",
+        "https://m.media-amazon.com/images/I/51Ps5PuMlYL.jpg",
+        "https://m.media-amazon.com/images/I/41r0P5nZBPL.jpg"
+      ],
+      "triggers": {
+        "rating": null,
+        "reviews_count": 0,
+        "discount_percent": 30,
+        "original_price": 69.5,
+        "discount_amount": 20.6,
+        "has_prime": true
+      },
+      "score": 3.0,
+      "deal_number": 1,
+      "deal_id": "#001"
+    }
+  ],
+  "by_category": {
+    "Rasage et épilation": [
+      {
+        "asin": "B0GBWTN3LJ",
+        "url": "https://www.amazon.fr/dp/B0GBWTN3LJ",
+        "title_preview": "",
+        "price_flash": "Prix Flash: 48,90 €",
+        "original_price": "Le plus bas : 69,50 €",
+        "discount_text": "",
+        "category": "Rasage et épilation",
+        "has_prime": false,
+        "title": "King C. Gillette Tondeuse Barbe Homme PRO MAX Sans Fil Avec 40 Réglages Et 4 Sabots Interchangeables De La Tondeuse Electrique, Coffret Homme Comprend 1 Base De Recharge Et 1 Pochette Zippée",
+        "price": 48.9,
+        "price_original": 69.5,
+        "images": [
+          "https://m.media-amazon.com/images/I/8184UCab7gL._AC_SL1500_.jpg",
+          "https://m.media-amazon.com/images/I/51vOP8G-M0L.jpg",
+          "https://m.media-amazon.com/images/I/51WCAN+B0BL.jpg",
+          "https://m.media-amazon.com/images/I/51qpD1736PL.jpg",
+          "https://m.media-amazon.com/images/I/519EYdCrLnL.jpg",
+          "https://m.media-amazon.com/images/I/51So0OcuqcL.jpg",
+          "https://m.media-amazon.com/images/I/51Ps5PuMlYL.jpg",
+          "https://m.media-amazon.com/images/I/41r0P5nZBPL.jpg"
+        ],
+        "triggers": {
+          "rating": null,
+          "reviews_count": 0,
+          "discount_percent": 30,
+          "original_price": 69.5,
+          "discount_amount": 20.6,
+          "has_prime": true
+        },
+        "score": 3.0,
+        "deal_number": 1,
+        "deal_id": "#001"
+      }
+    ]
+  },
+  "all_products": [
+    {
+      "asin": "B0GBWTN3LJ",
+      "url": "https://www.amazon.fr/dp/B0GBWTN3LJ",
+      "title_preview": "",
+      "price_flash": "Prix Flash: 48,90 €",
+      "original_price": "Le plus bas : 69,50 €",
+      "discount_text": "",
+      "category": "Rasage et épilation",
+      "has_prime": false,
+      "title": "King C. Gillette Tondeuse Barbe Homme PRO MAX Sans Fil Avec 40 Réglages Et 4 Sabots Interchangeables De La Tondeuse Electrique, Coffret Homme Comprend 1 Base De Recharge Et 1 Pochette Zippée",
+      "price": 48.9,
+      "price_original": 69.5,
+      "images": [
+        "https://m.media-amazon.com/images/I/8184UCab7gL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/51vOP8G-M0L.jpg",
+        "https://m.media-amazon.com/images/I/51WCAN+B0BL.jpg",
+        "https://m.media-amazon.com/images/I/51qpD1736PL.jpg",
+        "https://m.media-amazon.com/images/I/519EYdCrLnL.jpg",
+        "https://m.media-amazon.com/images/I/51So0OcuqcL.jpg",
+        "https://m.media-amazon.com/images/I/51Ps5PuMlYL.jpg",
+        "https://m.media-amazon.com/images/I/41r0P5nZBPL.jpg"
+      ],
+      "triggers": {
+        "rating": null,
+        "reviews_count": 0,
+        "discount_percent": 30,
+        "original_price": 69.5,
+        "discount_amount": 20.6,
+        "has_prime": true
+      },
+      "score": 3.0,
+      "deal_number": 1,
+      "deal_id": "#001"
+    }
+  ]
+}
