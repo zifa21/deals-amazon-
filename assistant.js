@@ -1,15 +1,17 @@
 /* ============================================================
    ASSISTANT DE CHOIX — zifabox.systeme.io/bons-plans
    ------------------------------------------------------------
-   Chargé depuis GitHub Pages. Pour le mettre à jour : modifier
-   Z:mazon-bot\sitessistant-choix.html, régénérer ce fichier
-   et pousser. Aucune intervention dans systeme.io ensuite.
+   NE PAS EDITER CE FICHIER A LA MAIN.
+   Source : site/assistant-choix.html
+   Regenerer : python site/build_assistant.py  puis git push
+   La landing ne contient qu'une balise <script src> : toute mise
+   a jour se fait ici, sans retoucher systeme.io.
 
-   Entonnoir de qualification DÉTERMINISTE : pas de LLM, pas de
-   clé API, pas de backend. Il filtre le catalogue site_index.json
-   déjà publié — il ne peut donc rien inventer, et il le dit quand
-   il n'a rien de solide à proposer.
-   RGPD : aucun stockage, aucun cookie, aucune donnée personnelle.
+   Entonnoir de qualification DETERMINISTE : pas de LLM, pas de
+   cle API, pas de backend. Il filtre le catalogue site_index.json
+   deja publie — il ne peut rien inventer, et il le dit quand il
+   n'a rien de solide a proposer.
+   RGPD : aucun stockage, aucun cookie, aucune donnee personnelle.
    ============================================================ */
 (function () {
   "use strict";
@@ -30,7 +32,7 @@
     root.innerHTML = HTML;
 
     // Placement : juste au-dessus de la barre de tri / grille produits.
-    // Aucun element existant de la page n'est modifie.
+    // Aucun element existant de la landing n'est modifie.
     var anchor = document.querySelector("#zb .zb-bar")
               || document.querySelector("#zb .zb-grid");
     if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(root, anchor);
@@ -292,8 +294,10 @@
         });
       }
 
-      function start(){
-        thread.innerHTML = "";
+      function start(garder){
+        // Un lien profond (?ref= / ?top=) a deja affiche des fiches : on les
+        // garde et on enchaine avec l'assistant en dessous.
+        if (!garder) thread.innerHTML = "";
         restartBtn.hidden = true;
         state = { kw: [], excl: [], min: 0, max: 1e9, mode: "sur" };
 
@@ -403,7 +407,7 @@
         return false;
       }
 
-      restartBtn.addEventListener("click", start);
+      restartBtn.addEventListener("click", function(){ start(false); });
 
       // ── Chargement du catalogue ──────────────────────────────────────
       noteEl.textContent = "Chargement du catalogue…";
@@ -414,8 +418,7 @@
           DATE_RELEVE = (j && j.date) || "";
           noteEl.textContent = PRODUITS.length + " produits vérifiés · relevé du " + DATE_RELEVE +
                                " · aucune donnée personnelle collectée";
-          deepLink();
-          start();
+          start(deepLink());
         })
         .catch(function(e){
           noteEl.textContent = "";
