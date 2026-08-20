@@ -568,6 +568,28 @@
             var res = PRODUITS.filter(function(p){
               return (Number(p.p) || 0) <= max && correspond(p, sel);
             });
+
+            // Controle deterministe. Le modele n'a pas le dernier mot : quand le
+            // visiteur nomme un produit precis, ce produit doit se retrouver dans
+            // le titre, sinon on prefere ne rien afficher.
+            var mots = (j && j.mots_cles) || [];
+            if (j && j.produit_precis && mots.length){
+              var strict = res.filter(function(p){
+                var t = norm(p.t);
+                for (var i = 0; i < mots.length; i++){
+                  if (motPresent(t, mots[i])) return true;
+                }
+                return false;
+              });
+              if (!strict.length){
+                addMsg('<div class="zba-empty"><strong>Je n\'ai pas ça au catalogue aujourd\'hui.</strong><br>' +
+                       "Je préfère te le dire plutôt que te proposer autre chose qui n'a rien à voir. " +
+                       "Le catalogue est revérifié chaque jour — ou tente une autre formulation.</div>");
+                start(true);
+                return;
+              }
+              res = strict;
+            }
             res = res.filter(function(p){ return (Number(p.n) || 0) >= 50; });
             res.sort(function(a, b){ return scoreSur(b) - scoreSur(a); });
             res = dedupe(res);
