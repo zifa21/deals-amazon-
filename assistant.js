@@ -52,84 +52,155 @@
       var noteEl = document.getElementById("zba-note");
       var restartBtn = document.getElementById("zba-restart");
 
-      // ── Besoins : chaque entree = un probleme reel, pas une categorie ──
-      // kw  : mots-cles cherches dans le titre + la categorie du produit
-      // qs  : questions fermees posees a la suite (2 a 3 max)
+      // ── Besoins ──────────────────────────────────────────────
+      // Chaque option porte une selection { cat, kw, excl } :
+      //   cat  : categories Amazon acceptees (le catalogue en compte 96) —
+      //          c'est la CONDITION, elle empeche le hors-sujet
+      //   kw   : affine dans le titre, en mots entiers (facultatif)
+      //   excl : ecarte les faux amis
       var BESOINS = [
-        { id:"pc", label:"Mon PC rame ou me limite",
-          kw:["ssd","disque","memoire","ram","clé usb","cle usb","souris","clavier","ecran","moniteur","station","dock","webcam","ventilateur","refroidiss"],
-          qs:[
-            { q:"C'est quoi qui coince ?", opts:[
-              { label:"Il met un temps fou à démarrer", kw:["ssd","nvme","m.2"],
-                excl:["externe","portable","boitier","dock","enceinte"] },
-              { label:"Il rame dès que j'ouvre plusieurs trucs", kw:["ram","memoire","ddr"],
-                excl:["cle usb","carte sd","micro sd","externe"] },
-              { label:"C'est le confort qui manque (écran, souris…)", kw:["ecran","moniteur","souris","clavier","dock","station","webcam"] }
-            ]}
-          ]},
-        { id:"tel", label:"J'équipe mon téléphone",
-          kw:["telephone","smartphone","coque","chargeur","cable","batterie externe","powerbank","support","protection ecran","induction","ecouteurs"],
-          qs:[
-            { q:"Il te manque quoi ?", opts:[
-              { label:"De la batterie dans la journée", kw:["batterie externe","powerbank","chargeur","induction","cable"] },
-              { label:"De la protection", kw:["coque","protection","verre","etui"] },
-              { label:"Un support pour la voiture ou le bureau", kw:["support","voiture","magnetique","aimant"] }
-            ]}
-          ]},
-        { id:"gaming", label:"J'améliore mon setup gaming",
-          kw:["gaming","manette","casque","console","souris","clavier","ecran","siege","ps5","xbox","switch","micro","led"],
-          qs:[
-            { q:"Tu veux gagner quoi ?", opts:[
-              { label:"Mieux entendre et être entendu", kw:["casque","micro","audio","ecouteurs"] },
-              { label:"Plus de précision (souris, clavier, manette)", kw:["souris","clavier","manette","tapis"] },
-              { label:"Plus de confort (écran, siège, lumière)", kw:["ecran","moniteur","siege","fauteuil","led","lampe"] }
-            ]}
-          ]},
-        { id:"animaux", label:"Je m'occupe de mon chat ou de mon chien",
-          kw:["chat","chien","litiere","croquette","animal","animaux","laisse","gamelle","fontaine","griffoir","poils"],
-          qs:[
-            { q:"C'est pour quoi faire ?", opts:[
-              { label:"Les poils partout dans la maison", kw:["aspirateur","poils","brosse","rouleau"] },
-              { label:"L'hygiène au quotidien (litière, propreté)", kw:["litiere","tapis","hygiene","desodoris","proprete"] },
-              { label:"Manger, boire, jouer", kw:["gamelle","fontaine","jouet","friandise","croquette","distributeur"] }
-            ]}
-          ]},
-        { id:"maison", label:"J'assainis ou je range ma maison",
-          kw:["aspirateur","nettoy","rangement","humidit","purificateur","ventilat","lampe","luminaire","deco","linge","filtre"],
-          qs:[
-            { q:"Le problème c'est plutôt…", opts:[
-              { label:"L'air : humidité, odeurs, allergies", kw:["humidit","purificateur","air","desodoris","filtre","deshumid"] },
-              { label:"Le sol et la poussière", kw:["aspirateur","balai","serpill","nettoy","vapeur"] },
-              { label:"Le manque de place", kw:["rangement","organisation","boite","etagere","panier","support"] }
-            ]}
-          ]},
-        { id:"auto", label:"J'entretiens ma voiture",
-          kw:["voiture","auto","pneu","moteur","batterie","essuie","gps","dashcam","chargeur voiture","huile","nettoyant"],
-          qs:[
-            { q:"Tu prépares quoi ?", opts:[
-              { label:"L'entretien courant (pneus, liquides, batterie)", kw:["pneu","compresseur","gonfleur","batterie","booster","huile","liquide"] },
-              { label:"La propreté intérieure et extérieure", kw:["nettoyant","aspirateur","lavage","microfibre","polish","shampoing"] },
-              { label:"Le confort et la sécurité à bord", kw:["support","dashcam","camera","gps","siege","pare soleil","organiseur"] }
-            ]}
-          ]},
-        { id:"beaute", label:"Soin et beauté du quotidien",
-          kw:["cheveux","peau","rasage","barbe","dent","ongle","maquillage","parfum","creme","tondeuse","seche"],
-          qs:[
-            { q:"C'est pour…", opts:[
-              { label:"Les cheveux", kw:["cheveux","seche","lisseur","brosse","shampoing","boucl"] },
-              { label:"La barbe ou le rasage", kw:["barbe","rasage","tondeuse","rasoir","epilat"] },
-              { label:"La peau, les dents, les ongles", kw:["peau","creme","visage","dent","brosse a dent","ongle","soin"] }
-            ]}
-          ]},
-        { id:"cuisine", label:"Je m'équipe en cuisine",
-          kw:["cuisine","casserole","poele","cafe","the","expresso","bouilloire","friteuse","robot","couteau","vaisselle"],
-          qs:[
-            { q:"Tu veux surtout…", opts:[
-              { label:"Gagner du temps le soir", kw:["friteuse","air fryer","robot","cuiseur","micro","mixeur"] },
-              { label:"Mieux boire (café, thé, eau)", kw:["cafe","expresso","the","bouilloire","gourde","filtre","carafe"] },
-              { label:"Cuisiner correctement (poêles, couteaux)", kw:["poele","casserole","couteau","planche","ustensile","plat"] }
-            ]}
-          ]}
+        { id:"pc", label:"Informatique et bureau",
+          sel:{ cat:["memoire","accessoires","electronique","imprimantes","composants"] },
+          qs:[{ q:"Il te manque quoi ?", opts:[
+            { label:"De la place pour mes fichiers",
+              sel:{ cat:["memoire"], kw:["ssd","nvme","disque","cle","usb","microsd","microsdxc","sdxc","carte"] } },
+            { label:"Du confort (souris, clavier, webcam, hub)",
+              sel:{ cat:["accessoires"], kw:["souris","clavier","webcam","hub","dock","station","tapis","support"] } },
+            { label:"De quoi imprimer ou scanner",
+              sel:{ cat:["imprimantes"] } }
+          ]}]},
+
+        { id:"tel", label:"Téléphone et accessoires",
+          sel:{ cat:["telephones portables","piles, chargeurs"] },
+          qs:[{ q:"Tu cherches quoi ?", opts:[
+            { label:"Tenir la journée sans recharger",
+              sel:{ cat:["telephones portables","piles, chargeurs"],
+                    kw:["batterie","powerbank","power","chargeur","chargeurs","solaire","mah"] } },
+            { label:"Protéger l'écran ou la coque",
+              sel:{ cat:["telephones portables"],
+                    kw:["coque","etui","protection","verre","trempe","protecteur"] } },
+            { label:"Un support voiture ou bureau",
+              sel:{ cat:["telephones portables"], kw:["support","magnetique","magsafe","trepied"],
+                    excl:["coque","etui","verre","protecteur","chargeur","batterie"] } }
+          ]}]},
+
+        { id:"son", label:"Son, image et TV",
+          sel:{ cat:["casques, ecouteurs","tv, video","audio et video","photo et camescopes","electronique"] },
+          qs:[{ q:"C'est pour quoi ?", opts:[
+            { label:"Écouter (casque, écouteurs, enceinte)",
+              sel:{ cat:["casques, ecouteurs","audio et video","electronique"],
+                    kw:["casque","ecouteurs","airpods","enceinte","bluetooth"] } },
+            { label:"Regarder (TV, box, projecteur)",
+              sel:{ cat:["tv, video","electronique"],
+                    kw:["tv","stick","projecteur","videoprojecteur","chromecast","kindle"] } },
+            { label:"Filmer, photographier, surveiller",
+              sel:{ cat:["photo et camescopes"] } }
+          ]}]},
+
+        { id:"animal", label:"Mon chat ou mon chien",
+          sel:{ cat:["chats","chiens"] },
+          qs:[{ q:"C'est pour qui ?", opts:[
+            { label:"Mon chat",  sel:{ cat:["chats"] } },
+            { label:"Mon chien", sel:{ cat:["chiens"] } }
+          ]}]},
+
+        { id:"maison", label:"Ma maison",
+          sel:{ cat:["ameublement","luminaires","ampoules","rangement","aspirateurs","entretien de la maison",
+                     "produits et accessoires de nettoyage","chauffage et climatisation","literie",
+                     "decoration de la maison"] },
+          qs:[{ q:"Tu veux améliorer quoi ?", opts:[
+            { label:"L'air : purifier, chauffer, rafraîchir",
+              sel:{ cat:["chauffage et climatisation"] } },
+            { label:"Le ménage : aspirer, nettoyer",
+              sel:{ cat:["aspirateurs","entretien de la maison","produits et accessoires de nettoyage"] } },
+            { label:"Le rangement",
+              sel:{ cat:["rangement"] } },
+            { label:"L'éclairage",
+              sel:{ cat:["luminaires","ampoules"] } },
+            { label:"Le couchage et le linge",
+              sel:{ cat:["literie","ameublement"],
+                    kw:["matelas","surmatelas","couette","oreiller","drap","protege","housse","linge"] } },
+            { label:"Les meubles et la déco",
+              sel:{ cat:["ameublement","decoration de la maison"],
+                    excl:["matelas","surmatelas","couette","oreiller","drap","taie","housse","linge","coussin"] } }
+          ]}]},
+
+        { id:"cuisine", label:"La cuisine",
+          sel:{ cat:["cuisine","arts de la table","petit electromenager","gros electromenager","cafe, the et expresso",
+                     "fontaines a eau","barbecue","couteaux","casseroles"] },
+          qs:[{ q:"Tu veux quoi ?", opts:[
+            { label:"Café, thé, eau",
+              sel:{ cat:["cafe, the et expresso","fontaines a eau"] } },
+            { label:"Cuire et cuisiner",
+              sel:{ cat:["cuisine","petit electromenager","gros electromenager","casseroles","couteaux","arts de la table"] } },
+            { label:"Manger dehors, barbecue",
+              sel:{ cat:["barbecue"] } }
+          ]}]},
+
+        { id:"auto", label:"Ma voiture ou ma moto",
+          sel:{ cat:["accessoires auto","pieces detachees auto","entretien auto","huiles et liquides",
+                     "motos, accessoires","outils et depannage"] },
+          qs:[{ q:"C'est pour quoi ?", opts:[
+            { label:"L'entretien courant",
+              sel:{ cat:["entretien auto","huiles et liquides","pieces detachees auto"] } },
+            { label:"Le dépannage et l'outillage",
+              sel:{ cat:["outils et depannage","accessoires auto"],
+                    kw:["booster","demarreur","gonfleur","compresseur","cric","chargeur","batterie"] } },
+            { label:"Le confort à bord",
+              sel:{ cat:["accessoires auto","motos, accessoires"],
+                    excl:["booster","demarreur","gonfleur"] } }
+          ]}]},
+
+        { id:"beaute", label:"Beauté et soin",
+          sel:{ cat:["soins pour la peau","coiffure et soins des cheveux","hygiene dentaire",
+                     "rasage et epilation","maquillage","vernis","bain, savons","parfums"] },
+          qs:[{ q:"Tu t'occupes de quoi ?", opts:[
+            { label:"Ma peau",              sel:{ cat:["soins pour la peau","bain, savons"] } },
+            { label:"Mes cheveux",          sel:{ cat:["coiffure et soins des cheveux"] } },
+            { label:"Mes dents",            sel:{ cat:["hygiene dentaire"] } },
+            { label:"Rasage ou épilation",  sel:{ cat:["rasage et epilation"] } },
+            { label:"Maquillage et ongles", sel:{ cat:["maquillage","vernis"] } },
+            { label:"Un parfum",            sel:{ cat:["parfums"] } }
+          ]}]},
+
+        { id:"forme", label:"Sport et forme",
+          sel:{ cat:["fitness et musculation","sports","nutrition et dietetique","vitamines",
+                     "sante et premiers soins","activites de plein air","technologie portable"] },
+          qs:[{ q:"C'est pour quoi ?", opts:[
+            { label:"M'entraîner (matériel)",
+              sel:{ cat:["fitness et musculation","sports","activites de plein air"] } },
+            { label:"Compléments et nutrition",
+              sel:{ cat:["nutrition et dietetique","vitamines"] } },
+            { label:"Me suivre (montre, cardio)",
+              sel:{ cat:["technologie portable","electronique"],
+                    kw:["montre","gps","cardiaque","cardio","forerunner","garmin","connectee"] } },
+            { label:"Santé et premiers soins",
+              sel:{ cat:["sante et premiers soins","thermometres"] } }
+          ]}]},
+
+        { id:"bureau", label:"Écriture, école et loisirs créatifs",
+          sel:{ cat:["ecriture","petites fournitures","fournitures d'ecole","loisirs creatifs"] },
+          qs:[{ q:"C'est pour quoi ?", opts:[
+            { label:"Écrire et annoter",     sel:{ cat:["ecriture"] } },
+            { label:"L'école et le bureau",  sel:{ cat:["petites fournitures","fournitures d'ecole"] } },
+            { label:"Créer, bricoler, dessiner", sel:{ cat:["loisirs creatifs"] } }
+          ]}]},
+
+        { id:"jardin", label:"Bricolage et jardin",
+          sel:{ cat:["outillage","quincaillerie","construction","jardinage","materiels d'arrosage",
+                     "mobilier de jardin"] },
+          qs:[{ q:"Tu fais quoi ?", opts:[
+            { label:"Je bricole",       sel:{ cat:["outillage","quincaillerie","construction"] } },
+            { label:"Je jardine",       sel:{ cat:["jardinage","materiels d'arrosage"] } },
+            { label:"J'aménage dehors", sel:{ cat:["mobilier de jardin"] } }
+          ]}]},
+
+        { id:"mode", label:"Vêtements et chaussures",
+          sel:{ cat:["homme","femme","chaussures","bagages"] },
+          qs:[{ q:"C'est pour qui ?", opts:[
+            { label:"Homme", sel:{ cat:["homme"] } },
+            { label:"Femme", sel:{ cat:["femme"] } }
+          ]}]}
       ];
 
       // Question budget — posee pour tous les besoins
@@ -163,21 +234,48 @@
       function imgUrl(id){ return "https://m.media-amazon.com/images/I/" + id + "._AC_SL400_.jpg"; }
       function lien(asin){ return "https://www.amazon.fr/dp/" + asin + "?tag=" + encodeURIComponent(TAG); }
 
-      function matchKw(p, kws){
-        if (!kws || !kws.length) return true;
-        var hay = norm(p.t) + " " + norm(p.c) + " " + norm(p.u);
-        for (var i=0;i<kws.length;i++){ if (hay.indexOf(norm(kws[i])) !== -1) return true; }
-        return false;
+      // ── Correspondance ───────────────────────────────────────────────
+      // La CATEGORIE Amazon decide (vocabulaire controle, 96 valeurs) ; les
+      // mots-cles ne font qu'affiner le titre, et avec des frontieres de mots.
+      //
+      // L'ancienne version cherchait les mots-cles en sous-chaine sur
+      // titre+categorie : "the" matchait "Auth-e-ntique", "Only The Brave" et
+      // "Eau de Toilette", "filtre" matchait un purificateur d'air et le filtre
+      // lumiere bleue d'un ecran. Une question sur la cuisine sortait un parfum.
+      function motPresent(hay, mot){
+        var m = norm(mot);
+        if (!m) return false;
+        // frontiere de mot des deux cotes (tolere les traits d'union et chiffres
+        // colles, ex "SSD1To", "m.2")
+        var re = new RegExp("(^|[^a-z0-9])" + m.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "([^a-z0-9]|$)");
+        return re.test(hay);
       }
-      // Exclusions : evite les faux amis (un disque dur EXTERNE n'accelere pas
-      // un PC, une cle USB n'est pas de la RAM). Mieux vaut zero resultat
-      // qu'un conseil faux.
-      function exclu(p, ex){
-        if (!ex || !ex.length) return false;
-        var hay = norm(p.t) + " " + norm(p.c);
-        for (var i=0;i<ex.length;i++){ if (hay.indexOf(norm(ex[i])) !== -1) return true; }
-        return false;
+      function correspond(p, sel){
+        if (!sel) return true;
+        var cat = norm(p.c);
+        if (sel.cat && sel.cat.length){
+          var ok = false;
+          for (var i=0;i<sel.cat.length;i++){
+            // La categorie doit COMMENCER par le motif. En sous-chaine simple,
+            // "accessoires" attrapait "Telephones portables et accessoires" et
+            // une question sur le clavier sortait des supports de telephone.
+            if (cat.lastIndexOf(norm(sel.cat[i]), 0) === 0){ ok = true; break; }
+          }
+          if (!ok) return false;
+        }
+        var titre = norm(p.t);
+        if (sel.kw && sel.kw.length){
+          var k = false;
+          for (var j=0;j<sel.kw.length;j++){ if (motPresent(titre, sel.kw[j])){ k = true; break; } }
+          if (!k) return false;
+        }
+        if (sel.excl && sel.excl.length){
+          var hay = titre + " " + cat;
+          for (var e=0;e<sel.excl.length;e++){ if (motPresent(hay, sel.excl[e])) return false; }
+        }
+        return true;
       }
+
       // Le catalogue contient des variantes tres proches d'un meme produit :
       // on n'en montre jamais deux dans la meme selection.
       function dedupe(list){
@@ -280,18 +378,14 @@
       // Le catalogue tourne tous les jours : une option qui ne mene a aucun
       // produit aujourd'hui n'est pas affichee. Mieux vaut moins de choix que
       // des impasses.
-      function dispo(kws, ex){
-        for (var i=0;i<PRODUITS.length;i++){
-          if (matchKw(PRODUITS[i], kws) && !exclu(PRODUITS[i], ex)) return true;
-        }
+      function dispo(sel){
+        for (var i=0;i<PRODUITS.length;i++){ if (correspond(PRODUITS[i], sel)) return true; }
         return false;
       }
       function optionsUtiles(besoin, question){
         var q = question || besoin.qs[0];
         if (!q) return [];
-        return q.opts.filter(function(o){
-          return dispo((o.kw && o.kw.length) ? o.kw : besoin.kw, o.excl || besoin.excl);
-        });
+        return q.opts.filter(function(o){ return dispo(o.sel || besoin.sel); });
       }
 
       function start(garder){
@@ -299,10 +393,10 @@
         // garde et on enchaine avec l'assistant en dessous.
         if (!garder) thread.innerHTML = "";
         restartBtn.hidden = true;
-        state = { kw: [], excl: [], min: 0, max: 1e9, mode: "sur" };
+        state = { sel: null, min: 0, max: 1e9, mode: "sur" };
 
         var besoinsDispo = BESOINS.filter(function(b){
-          return dispo(b.kw) && (!b.qs.length || optionsUtiles(b).length > 0);
+          return dispo(b.sel) && (!b.qs.length || optionsUtiles(b).length > 0);
         });
         if (!besoinsDispo.length){
           addMsg('<div class="zba-empty"><strong>Le catalogue du jour est trop mince pour l\'assistant.</strong><br>' +
@@ -314,8 +408,7 @@
           return { label: b.label, besoin: b };
         }), function(opt){
           var b = opt.besoin;
-          state.kw = b.kw.slice();
-          state.excl = (b.excl || []).slice();
+          state.sel = b.sel;
           var etape = 0;
           (function suite(){
             if (etape < b.qs.length){
@@ -323,8 +416,7 @@
               var opts = optionsUtiles(b, q);
               if (!opts.length){ suite(); return; }
               addQuestion(q.q, opts, function(o){
-                if (o.kw && o.kw.length) state.kw = o.kw.slice();
-                if (o.excl) state.excl = o.excl.slice();
+                if (o.sel) state.sel = o.sel;
                 suite();
               });
               return;
@@ -343,8 +435,7 @@
       function finir(){
         var res = PRODUITS.filter(function(p){
           var pr = Number(p.p) || 0;
-          return pr >= state.min && pr <= state.max
-                 && matchKw(p, state.kw) && !exclu(p, state.excl);
+          return pr >= state.min && pr <= state.max && correspond(p, state.sel);
         });
         if (state.mode === "sur"){
           res = res.filter(function(p){ return (Number(p.n)||0) >= 50; });
