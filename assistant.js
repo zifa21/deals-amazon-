@@ -17,8 +17,8 @@
   "use strict";
   if (document.getElementById("zba-assist")) return;
 
-  var CSS  = "#zba-assist{\n  --zba-accent:#ff6b00; --zba-accent2:#ff9a00;\n  --zba-bg:#ffffff; --zba-card:#f6f6f9; --zba-line:#e3e3ec;\n  --zba-fg:#16161d; --zba-muted:#63637a; --zba-green:#0a8f4d;\n  max-width:840px; margin:32px auto; padding:22px;\n  border:1px solid var(--zba-line); border-radius:18px; background:var(--zba-bg);\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  color:var(--zba-fg); line-height:1.5; box-sizing:border-box; text-align:left;\n}\n#zba-assist *{box-sizing:border-box}\n#zba-assist .zba-head{text-align:center}\n#zba-assist .zba-title{font-size:1.45rem; font-weight:800; letter-spacing:-.01em; margin:0 0 6px}\n#zba-assist .zba-sub{margin:0 0 18px; color:var(--zba-muted); font-size:.95rem}\n#zba-assist .zba-sub em{color:var(--zba-fg); font-style:normal; font-weight:600}\n\n#zba-assist .zba-msg{margin:0 0 14px; animation:zbIn .18s ease-out}\n@keyframes zbIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n#zba-assist .zba-q{font-weight:700; margin:0 0 10px; font-size:1.02rem}\n#zba-assist .zba-a{\n  display:inline-block; margin:0 8px 8px 0; padding:9px 15px;\n  border:1px solid var(--zba-line); border-radius:999px; background:var(--zba-card);\n  font:inherit; font-size:.93rem; cursor:pointer; transition:.14s;\n}\n#zba-assist .zba-a:hover{border-color:var(--zba-accent); background:#fff5ec}\n#zba-assist .zba-a:focus-visible{outline:2px solid var(--zba-accent); outline-offset:2px}\n#zba-assist .zba-echo{\n  display:inline-block; padding:6px 13px; border-radius:999px;\n  background:var(--zba-accent); color:#fff; font-size:.86rem; font-weight:600;\n}\n#zba-assist .zba-echo-row{text-align:right; margin:0 0 14px}\n\n#zba-assist .zba-card{\n  display:flex; gap:14px; padding:14px; margin:0 0 12px;\n  border:1px solid var(--zba-line); border-radius:14px; background:var(--zba-card);\n}\n#zba-assist .zba-card img{\n  width:92px; height:92px; object-fit:contain; flex:0 0 92px;\n  background:#fff; border-radius:10px; padding:6px;\n}\n#zba-assist .zba-card-body{min-width:0; flex:1}\n#zba-assist .zba-rank{\n  display:inline-block; font-size:.74rem; font-weight:800; letter-spacing:.04em;\n  text-transform:uppercase; color:var(--zba-accent); margin:0 0 3px;\n}\n#zba-assist .zba-name{font-weight:700; font-size:.97rem; margin:0 0 6px}\n#zba-assist .zba-price{font-size:1.18rem; font-weight:800; color:var(--zba-green)}\n#zba-assist .zba-was{font-size:.85rem; color:var(--zba-muted); text-decoration:line-through; margin-left:7px}\n#zba-assist .zba-off{\n  display:inline-block; margin-left:7px; padding:2px 8px; border-radius:7px;\n  background:var(--zba-accent); color:#fff; font-size:.78rem; font-weight:700;\n}\n#zba-assist .zba-meta{font-size:.85rem; color:var(--zba-muted); margin:5px 0 0}\n#zba-assist .zba-why{font-size:.88rem; margin:9px 0 0; padding-left:16px; position:relative}\n#zba-assist .zba-why::before{content:\"✓\"; position:absolute; left:0; color:var(--zba-green); font-weight:700}\n#zba-assist .zba-not{font-size:.88rem; margin:5px 0 0; padding-left:16px; position:relative; color:var(--zba-muted)}\n#zba-assist .zba-not::before{content:\"!\"; position:absolute; left:2px; color:var(--zba-accent); font-weight:800}\n#zba-assist .zba-cta{\n  display:inline-block; margin:11px 0 0; padding:9px 17px; border-radius:9px;\n  background:var(--zba-accent); color:#fff !important; text-decoration:none !important;\n  font-weight:700; font-size:.9rem;\n}\n#zba-assist .zba-cta:hover{background:var(--zba-accent2)}\n\n#zba-assist .zba-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:6px}\n#zba-assist .zba-restart{\n  padding:8px 15px; border:1px solid var(--zba-line); border-radius:999px;\n  background:#fff; font:inherit; font-size:.88rem; cursor:pointer;\n}\n#zba-assist .zba-restart:hover{border-color:var(--zba-accent)}\n#zba-assist .zba-note{font-size:.8rem; color:var(--zba-muted)}\n#zba-assist .zba-empty{\n  padding:13px 15px; border-radius:11px; background:#fff5ec;\n  border:1px solid #ffd9b8; font-size:.92rem;\n}\n\n@media (max-width:560px){\n  #zba-assist{padding:17px; margin:22px 10px; border-radius:14px}\n  #zba-assist .zba-title{font-size:1.22rem}\n  #zba-assist .zba-card{flex-direction:column}\n  #zba-assist .zba-card img{width:100%; height:150px; flex:none}\n  #zba-assist .zba-cta{display:block; text-align:center}\n}\n@media (prefers-color-scheme:dark){\n  #zba-assist{--zba-bg:#0f0f16; --zba-card:#191922; --zba-line:#2c2c3c;\n             --zba-fg:#f0f0f5; --zba-muted:#9494ad; --zba-green:#00e676}\n  #zba-assist .zba-a:hover{background:#241a12}\n  #zba-assist .zba-restart{background:#191922; color:var(--zba-fg)}\n  #zba-assist .zba-empty{background:#241a12; border-color:#4a3520}\n}";
-  var HTML = "<div class=\"zba-head\">\n    <div class=\"zba-title\">Tu cherches quoi, exactement&nbsp;?</div>\n    <p class=\"zba-sub\">Réponds à 2 ou 3 questions, je te sors 3 produits du catalogue — et je te dis aussi\n      quand ce n'est <em>pas</em> pour toi.</p>\n  </div>\n\n  <div class=\"zba-thread\" id=\"zba-thread\" role=\"log\" aria-live=\"polite\"></div>\n\n  <div class=\"zba-foot\">\n    <button type=\"button\" class=\"zba-restart\" id=\"zba-restart\" hidden>↺ Recommencer</button>\n    <span class=\"zba-note\" id=\"zba-note\"></span>\n  </div>";
+  var CSS  = "#zba-assist{\n  --zba-accent:#ff6b00; --zba-accent2:#ff9a00;\n  --zba-bg:#ffffff; --zba-card:#f6f6f9; --zba-line:#e3e3ec;\n  --zba-fg:#16161d; --zba-muted:#63637a; --zba-green:#0a8f4d;\n  max-width:840px; margin:32px auto; padding:22px;\n  border:1px solid var(--zba-line); border-radius:18px; background:var(--zba-bg);\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  color:var(--zba-fg); line-height:1.5; box-sizing:border-box; text-align:left;\n}\n#zba-assist *{box-sizing:border-box}\n#zba-assist .zba-head{text-align:center}\n#zba-assist .zba-title{font-size:1.45rem; font-weight:800; letter-spacing:-.01em; margin:0 0 6px}\n#zba-assist .zba-sub{margin:0 0 18px; color:var(--zba-muted); font-size:.95rem}\n#zba-assist .zba-sub em{color:var(--zba-fg); font-style:normal; font-weight:600}\n\n#zba-assist .zba-avatar{position:relative; width:56px; height:56px; margin:0 auto 8px}\n#zba-assist .zba-av-bg{fill:var(--zba-accent)}\n#zba-assist .zba-av-oeil{fill:#fff}\n#zba-assist .zba-av-bouche{stroke:#fff}\n#zba-assist .zba-avatar.reflechit .zba-av-bouche{d:path(\"M23 42 Q32 42 41 42\")}\n#zba-assist .zba-av-points{\n  position:absolute; left:50%; bottom:-4px; transform:translateX(-50%);\n  display:none; gap:3px;\n}\n#zba-assist .zba-avatar.reflechit .zba-av-points{display:flex}\n#zba-assist .zba-av-points i{\n  width:5px; height:5px; border-radius:50%; background:var(--zba-accent);\n  animation:zbPulse 1s infinite ease-in-out;\n}\n#zba-assist .zba-av-points i:nth-child(2){animation-delay:.15s}\n#zba-assist .zba-av-points i:nth-child(3){animation-delay:.3s}\n@keyframes zbPulse{0%,60%,100%{opacity:.25}30%{opacity:1}}\n\n#zba-assist .zba-saisie{display:flex; gap:8px; margin:0 0 18px}\n#zba-assist .zba-saisie input{\n  flex:1; min-width:0; padding:11px 15px; font:inherit; font-size:.95rem;\n  border:1px solid var(--zba-line); border-radius:999px;\n  background:var(--zba-bg); color:var(--zba-fg);\n}\n#zba-assist .zba-saisie input:focus{outline:none; border-color:var(--zba-accent)}\n#zba-assist .zba-saisie button{\n  flex:0 0 42px; height:42px; border:0; border-radius:50%; cursor:pointer;\n  background:var(--zba-accent); color:#fff; font-size:1.15rem; line-height:1;\n}\n#zba-assist .zba-saisie button:disabled{opacity:.45; cursor:default}\n#zba-assist .zba-saisie button:hover:not(:disabled){background:var(--zba-accent2)}\n\n#zba-assist .zba-msg{margin:0 0 14px; animation:zbIn .18s ease-out}\n@keyframes zbIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n#zba-assist .zba-q{font-weight:700; margin:0 0 10px; font-size:1.02rem}\n#zba-assist .zba-a{\n  display:inline-block; margin:0 8px 8px 0; padding:9px 15px;\n  border:1px solid var(--zba-line); border-radius:999px; background:var(--zba-card);\n  font:inherit; font-size:.93rem; cursor:pointer; transition:.14s;\n}\n#zba-assist .zba-a:hover{border-color:var(--zba-accent); background:#fff5ec}\n#zba-assist .zba-a:focus-visible{outline:2px solid var(--zba-accent); outline-offset:2px}\n#zba-assist .zba-echo{\n  display:inline-block; padding:6px 13px; border-radius:999px;\n  background:var(--zba-accent); color:#fff; font-size:.86rem; font-weight:600;\n}\n#zba-assist .zba-echo-row{text-align:right; margin:0 0 14px}\n\n#zba-assist .zba-card{\n  display:flex; gap:14px; padding:14px; margin:0 0 12px;\n  border:1px solid var(--zba-line); border-radius:14px; background:var(--zba-card);\n}\n#zba-assist .zba-card img{\n  width:92px; height:92px; object-fit:contain; flex:0 0 92px;\n  background:#fff; border-radius:10px; padding:6px;\n}\n#zba-assist .zba-card-body{min-width:0; flex:1}\n#zba-assist .zba-rank{\n  display:inline-block; font-size:.74rem; font-weight:800; letter-spacing:.04em;\n  text-transform:uppercase; color:var(--zba-accent); margin:0 0 3px;\n}\n#zba-assist .zba-name{font-weight:700; font-size:.97rem; margin:0 0 6px}\n#zba-assist .zba-price{font-size:1.18rem; font-weight:800; color:var(--zba-green)}\n#zba-assist .zba-was{font-size:.85rem; color:var(--zba-muted); text-decoration:line-through; margin-left:7px}\n#zba-assist .zba-off{\n  display:inline-block; margin-left:7px; padding:2px 8px; border-radius:7px;\n  background:var(--zba-accent); color:#fff; font-size:.78rem; font-weight:700;\n}\n#zba-assist .zba-meta{font-size:.85rem; color:var(--zba-muted); margin:5px 0 0}\n#zba-assist .zba-why{font-size:.88rem; margin:9px 0 0; padding-left:16px; position:relative}\n#zba-assist .zba-why::before{content:\"✓\"; position:absolute; left:0; color:var(--zba-green); font-weight:700}\n#zba-assist .zba-not{font-size:.88rem; margin:5px 0 0; padding-left:16px; position:relative; color:var(--zba-muted)}\n#zba-assist .zba-not::before{content:\"!\"; position:absolute; left:2px; color:var(--zba-accent); font-weight:800}\n#zba-assist .zba-cta{\n  display:inline-block; margin:11px 0 0; padding:9px 17px; border-radius:9px;\n  background:var(--zba-accent); color:#fff !important; text-decoration:none !important;\n  font-weight:700; font-size:.9rem;\n}\n#zba-assist .zba-cta:hover{background:var(--zba-accent2)}\n\n#zba-assist .zba-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:6px}\n#zba-assist .zba-restart{\n  padding:8px 15px; border:1px solid var(--zba-line); border-radius:999px;\n  background:#fff; font:inherit; font-size:.88rem; cursor:pointer;\n}\n#zba-assist .zba-restart:hover{border-color:var(--zba-accent)}\n#zba-assist .zba-note{font-size:.8rem; color:var(--zba-muted)}\n#zba-assist .zba-empty{\n  padding:13px 15px; border-radius:11px; background:#fff5ec;\n  border:1px solid #ffd9b8; font-size:.92rem;\n}\n\n@media (max-width:560px){\n  #zba-assist{padding:17px; margin:22px 10px; border-radius:14px}\n  #zba-assist .zba-title{font-size:1.22rem}\n  #zba-assist .zba-card{flex-direction:column}\n  #zba-assist .zba-card img{width:100%; height:150px; flex:none}\n  #zba-assist .zba-cta{display:block; text-align:center}\n}\n@media (prefers-color-scheme:dark){\n  #zba-assist{--zba-bg:#0f0f16; --zba-card:#191922; --zba-line:#2c2c3c;\n             --zba-fg:#f0f0f5; --zba-muted:#9494ad; --zba-green:#00e676}\n  #zba-assist .zba-a:hover{background:#241a12}\n  #zba-assist .zba-restart{background:#191922; color:var(--zba-fg)}\n  #zba-assist .zba-empty{background:#241a12; border-color:#4a3520}\n}";
+  var HTML = "<div class=\"zba-head\">\n    <div class=\"zba-avatar\" id=\"zba-avatar\" aria-hidden=\"true\">\n      <svg viewBox=\"0 0 64 64\" width=\"56\" height=\"56\">\n        <circle cx=\"32\" cy=\"32\" r=\"31\" class=\"zba-av-bg\"/>\n        <circle cx=\"24\" cy=\"28\" r=\"3.4\" class=\"zba-av-oeil\"/>\n        <circle cx=\"40\" cy=\"28\" r=\"3.4\" class=\"zba-av-oeil\"/>\n        <path d=\"M22 40 Q32 48 42 40\" class=\"zba-av-bouche\" fill=\"none\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n      </svg>\n      <span class=\"zba-av-points\"><i></i><i></i><i></i></span>\n    </div>\n    <div class=\"zba-title\">Tu cherches quoi, exactement&nbsp;?</div>\n    <p class=\"zba-sub\">Dis-le avec tes mots, ou réponds à 2-3 questions. Je sors 3 produits du\n      catalogue — et je te dis aussi quand ce n'est <em>pas</em> pour toi.</p>\n  </div>\n\n  <form class=\"zba-saisie\" id=\"zba-saisie\" hidden>\n    <input type=\"text\" id=\"zba-input\" maxlength=\"400\" autocomplete=\"off\"\n           placeholder=\"Ex : mon chat perd ses poils partout…\">\n    <button type=\"submit\" id=\"zba-envoi\" aria-label=\"Envoyer\">→</button>\n  </form>\n\n  <div class=\"zba-thread\" id=\"zba-thread\" role=\"log\" aria-live=\"polite\"></div>\n\n  <div class=\"zba-foot\">\n    <button type=\"button\" class=\"zba-restart\" id=\"zba-restart\" hidden>↺ Recommencer</button>\n    <span class=\"zba-note\" id=\"zba-note\"></span>\n  </div>";
 
   function install() {
     var st = document.createElement("style");
@@ -51,6 +51,29 @@
       var thread = document.getElementById("zba-thread");
       var noteEl = document.getElementById("zba-note");
       var restartBtn = document.getElementById("zba-restart");
+      var avatar = document.getElementById("zba-avatar");
+      var formSaisie = document.getElementById("zba-saisie");
+      var champ = document.getElementById("zba-input");
+      var boutonEnvoi = document.getElementById("zba-envoi");
+
+      // Adresse du proxy Groq (NAS). Elle change a chaque redemarrage du tunnel,
+      // donc on la lit dans un petit fichier publie par le NAS lui-meme.
+      var PROXY = null;
+
+      function reflechit(oui){
+        if (avatar) avatar.classList.toggle("reflechit", !!oui);
+        if (boutonEnvoi) boutonEnvoi.disabled = !!oui;
+      }
+
+      function decouvrirProxy(){
+        var u = root.getAttribute("data-endpoint");
+        if (!u) return Promise.resolve(null);
+        return fetch(u, {cache: "no-store"})
+          .then(function(r){ return r.ok ? r.json() : null; })
+          .then(function(j){ return (j && j.url) ? j.url.replace(/\/+$/, "") : null; })
+          .catch(function(){ return null; });
+      }
+
 
       // ── Besoins ──────────────────────────────────────────────
       // Chaque option porte une selection { cat, kw, excl } :
@@ -501,6 +524,79 @@
       restartBtn.addEventListener("click", function(){ start(false); });
 
       // ── Chargement du catalogue ──────────────────────────────────────
+      // ── Saisie libre ────────────────────────────────────────────────
+      // Le proxy comprend la demande et renvoie des categories ; la selection
+      // du produit reste faite ici, sur le catalogue. Le modele ne voit aucun
+      // produit et ne peut donc en inventer aucun.
+      function categoriesDuCatalogue(){
+        var vues = {}, out = [];
+        PRODUITS.forEach(function(p){
+          var c = (p.c || "").trim();
+          if (c && !vues[c]) { vues[c] = 1; out.push(c); }
+        });
+        return out;
+      }
+
+      function repondreALaSaisie(texte){
+        if (!PROXY || !texte) return;
+        formSaisie.hidden = false;
+        thread.innerHTML = "";
+        restartBtn.hidden = true;
+        addMsg('<div class="zba-echo-row"><span class="zba-echo">' + esc(texte) + "</span></div>");
+        reflechit(true);
+
+        fetch(PROXY + "/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: texte, categories: categoriesDuCatalogue() })
+        })
+          .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+          .then(function(j){
+            reflechit(false);
+            var cats = (j && j.categories) || [];
+            if (j && j.reformulation) addMsg('<p class="zba-q">' + esc(j.reformulation) + "</p>");
+            if (!cats.length){
+              addMsg('<div class="zba-empty">Je n\'ai pas trouv\u00e9 de rayon qui colle \u00e0 \u00e7a. ' +
+                     "Reformule, ou passe par les questions ci-dessous.</div>");
+              start(true);
+              return;
+            }
+            var sel = { cat: cats };
+            var max = (typeof j.budget_max === "number" && j.budget_max > 0) ? j.budget_max : 1e9;
+            var res = PRODUITS.filter(function(p){
+              return (Number(p.p) || 0) <= max && correspond(p, sel);
+            });
+            res = res.filter(function(p){ return (Number(p.n) || 0) >= 50; });
+            res.sort(function(a, b){ return scoreSur(b) - scoreSur(a); });
+            res = dedupe(res);
+            if (!res.length){
+              addMsg('<div class="zba-empty"><strong>Rien de solide dans le catalogue du jour pour \u00e7a.</strong><br>' +
+                     "Je pr\u00e9f\u00e8re te le dire que te sortir un produit \u00e0 c\u00f4t\u00e9 de la plaque. " +
+                     "Le catalogue est rev\u00e9rifi\u00e9 chaque jour.</div>");
+              start(true);
+              return;
+            }
+            renderResultats(res.slice(0, 3), "sur", null, "Voil\u00e0 ce que je te propose :");
+            addMsg('<p class="zba-q">Autre chose ? \u00c9cris-le au-dessus, ou repars des questions :</p>');
+            start(true);
+          })
+          .catch(function(e){
+            reflechit(false);
+            addMsg('<div class="zba-empty">Je n\'arrive pas \u00e0 r\u00e9fl\u00e9chir l\u00e0 tout de suite. ' +
+                   "Passe par les questions ci-dessous, \u00e7a marche sans moi.</div>");
+            start(true);
+            if (window.console) console.warn("[assistant] proxy", e);
+          });
+      }
+
+      formSaisie.addEventListener("submit", function(ev){
+        ev.preventDefault();
+        var t = (champ.value || "").trim();
+        if (!t) return;
+        champ.value = "";
+        repondreALaSaisie(t);
+      });
+
       noteEl.textContent = "Chargement du catalogue…";
       fetch(SRC, { cache: "no-cache" })
         .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -510,6 +606,13 @@
           noteEl.textContent = PRODUITS.length + " produits vérifiés · relevé du " + DATE_RELEVE +
                                " · aucune donnée personnelle collectée";
           start(deepLink());
+          // La saisie libre n'apparait que si le proxy repond. Sans lui,
+          // l'assistant reste utilisable en mode boutons.
+          decouvrirProxy().then(function(u){
+            if (!u) return;
+            PROXY = u;
+            formSaisie.hidden = false;
+          });
         })
         .catch(function(e){
           noteEl.textContent = "";
