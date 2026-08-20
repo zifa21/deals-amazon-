@@ -29,6 +29,8 @@
     root.id = "zba-assist";
     root.setAttribute("data-src", "https://zifa21.github.io/deals-amazon-/data/site_index.json");
     root.setAttribute("data-tag", "fz2107site-21");
+    // adresse ou le NAS publie l'URL courante de son tunnel
+    root.setAttribute("data-endpoint", "https://zifa21.github.io/deals-amazon-/data/assistant_endpoint.json");
     root.innerHTML = HTML;
 
     // Placement : juste au-dessus de la barre de tri / grille produits.
