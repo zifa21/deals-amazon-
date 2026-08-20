@@ -1,20 +1,21 @@
 /* ============================================================
    ASSISTANT DE CHOIX — zifabox.systeme.io/bons-plans
    ------------------------------------------------------------
-   Chargé depuis GitHub Pages : pour le mettre à jour, modifier
-   Z:mazon-bot\deals-amazon-ssistant.js et pousser. Aucune
-   intervention dans systeme.io n'est nécessaire ensuite.
+   Chargé depuis GitHub Pages. Pour le mettre à jour : modifier
+   Z:mazon-bot\sitessistant-choix.html, régénérer ce fichier
+   et pousser. Aucune intervention dans systeme.io ensuite.
 
    Entonnoir de qualification DÉTERMINISTE : pas de LLM, pas de
    clé API, pas de backend. Il filtre le catalogue site_index.json
-   déjà publié, il ne peut donc rien inventer.
+   déjà publié — il ne peut donc rien inventer, et il le dit quand
+   il n'a rien de solide à proposer.
    RGPD : aucun stockage, aucun cookie, aucune donnée personnelle.
    ============================================================ */
 (function () {
   "use strict";
-  if (document.getElementById("zba-assist")) return;   // deja installe
+  if (document.getElementById("zba-assist")) return;
 
-  var CSS  = "#zba-assist{\n  --zba-accent:#ff6b00; --zba-accent2:#ff9a00;\n  --zba-bg:#ffffff; --zba-card:#f6f6f9; --zba-line:#e3e3ec;\n  --zba-fg:#16161d; --zba-muted:#63637a; --zba-green:#0a8f4d;\n  max-width:840px; margin:32px auto; padding:22px;\n  border:1px solid var(--zba-line); border-radius:18px; background:var(--zba-bg);\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  color:var(--zba-fg); line-height:1.5; box-sizing:border-box;\n}\n#zba-assist *{box-sizing:border-box}\n#zba-assist .zba-title{font-size:1.45rem; font-weight:800; letter-spacing:-.01em; margin:0 0 6px}\n#zba-assist .zba-sub{margin:0 0 18px; color:var(--zba-muted); font-size:.95rem}\n#zba-assist .zba-sub em{color:var(--zba-fg); font-style:normal; font-weight:600}\n\n#zba-assist .zba-msg{margin:0 0 14px; animation:zbIn .18s ease-out}\n@keyframes zbIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n#zba-assist .zba-q{font-weight:700; margin:0 0 10px; font-size:1.02rem}\n#zba-assist .zba-a{\n  display:inline-block; margin:0 8px 8px 0; padding:9px 15px;\n  border:1px solid var(--zba-line); border-radius:999px; background:var(--zba-card);\n  font:inherit; font-size:.93rem; cursor:pointer; transition:.14s;\n}\n#zba-assist .zba-a:hover{border-color:var(--zba-accent); background:#fff5ec}\n#zba-assist .zba-a:focus-visible{outline:2px solid var(--zba-accent); outline-offset:2px}\n#zba-assist .zba-echo{\n  display:inline-block; padding:6px 13px; border-radius:999px;\n  background:var(--zba-accent); color:#fff; font-size:.86rem; font-weight:600;\n}\n#zba-assist .zba-echo-row{text-align:right; margin:0 0 14px}\n\n#zba-assist .zba-card{\n  display:flex; gap:14px; padding:14px; margin:0 0 12px;\n  border:1px solid var(--zba-line); border-radius:14px; background:var(--zba-card);\n}\n#zba-assist .zba-card img{\n  width:92px; height:92px; object-fit:contain; flex:0 0 92px;\n  background:#fff; border-radius:10px; padding:6px;\n}\n#zba-assist .zba-card-body{min-width:0; flex:1}\n#zba-assist .zba-rank{\n  display:inline-block; font-size:.74rem; font-weight:800; letter-spacing:.04em;\n  text-transform:uppercase; color:var(--zba-accent); margin:0 0 3px;\n}\n#zba-assist .zba-name{font-weight:700; font-size:.97rem; margin:0 0 6px}\n#zba-assist .zba-price{font-size:1.18rem; font-weight:800; color:var(--zba-green)}\n#zba-assist .zba-was{font-size:.85rem; color:var(--zba-muted); text-decoration:line-through; margin-left:7px}\n#zba-assist .zba-off{\n  display:inline-block; margin-left:7px; padding:2px 8px; border-radius:7px;\n  background:var(--zba-accent); color:#fff; font-size:.78rem; font-weight:700;\n}\n#zba-assist .zba-meta{font-size:.85rem; color:var(--zba-muted); margin:5px 0 0}\n#zba-assist .zba-why{font-size:.88rem; margin:9px 0 0; padding-left:16px; position:relative}\n#zba-assist .zba-why::before{content:\"✓\"; position:absolute; left:0; color:var(--zba-green); font-weight:700}\n#zba-assist .zba-not{font-size:.88rem; margin:5px 0 0; padding-left:16px; position:relative; color:var(--zba-muted)}\n#zba-assist .zba-not::before{content:\"!\"; position:absolute; left:2px; color:var(--zba-accent); font-weight:800}\n#zba-assist .zba-cta{\n  display:inline-block; margin:11px 0 0; padding:9px 17px; border-radius:9px;\n  background:var(--zba-accent); color:#fff !important; text-decoration:none !important;\n  font-weight:700; font-size:.9rem;\n}\n#zba-assist .zba-cta:hover{background:var(--zba-accent2)}\n\n#zba-assist .zba-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:6px}\n#zba-assist .zba-restart{\n  padding:8px 15px; border:1px solid var(--zba-line); border-radius:999px;\n  background:#fff; font:inherit; font-size:.88rem; cursor:pointer;\n}\n#zba-assist .zba-restart:hover{border-color:var(--zba-accent)}\n#zba-assist .zba-note{font-size:.8rem; color:var(--zba-muted)}\n#zba-assist .zba-empty{\n  padding:13px 15px; border-radius:11px; background:#fff5ec;\n  border:1px solid #ffd9b8; font-size:.92rem;\n}\n\n@media (max-width:560px){\n  #zba-assist{padding:17px; margin:22px 10px; border-radius:14px}\n  #zba-assist .zba-title{font-size:1.22rem}\n  #zba-assist .zba-card{flex-direction:column}\n  #zba-assist .zba-card img{width:100%; height:150px; flex:none}\n  #zba-assist .zba-cta{display:block; text-align:center}\n}\n@media (prefers-color-scheme:dark){\n  #zba-assist{--zba-bg:#0f0f16; --zba-card:#191922; --zba-line:#2c2c3c;\n             --zba-fg:#f0f0f5; --zba-muted:#9494ad; --zba-green:#00e676}\n  #zba-assist .zba-a:hover{background:#241a12}\n  #zba-assist .zba-restart{background:#191922; color:var(--zba-fg)}\n  #zba-assist .zba-empty{background:#241a12; border-color:#4a3520}\n}";
+  var CSS  = "#zba-assist{\n  --zba-accent:#ff6b00; --zba-accent2:#ff9a00;\n  --zba-bg:#ffffff; --zba-card:#f6f6f9; --zba-line:#e3e3ec;\n  --zba-fg:#16161d; --zba-muted:#63637a; --zba-green:#0a8f4d;\n  max-width:840px; margin:32px auto; padding:22px;\n  border:1px solid var(--zba-line); border-radius:18px; background:var(--zba-bg);\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  color:var(--zba-fg); line-height:1.5; box-sizing:border-box; text-align:left;\n}\n#zba-assist *{box-sizing:border-box}\n#zba-assist .zba-head{text-align:center}\n#zba-assist .zba-title{font-size:1.45rem; font-weight:800; letter-spacing:-.01em; margin:0 0 6px}\n#zba-assist .zba-sub{margin:0 0 18px; color:var(--zba-muted); font-size:.95rem}\n#zba-assist .zba-sub em{color:var(--zba-fg); font-style:normal; font-weight:600}\n\n#zba-assist .zba-msg{margin:0 0 14px; animation:zbIn .18s ease-out}\n@keyframes zbIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}\n#zba-assist .zba-q{font-weight:700; margin:0 0 10px; font-size:1.02rem}\n#zba-assist .zba-a{\n  display:inline-block; margin:0 8px 8px 0; padding:9px 15px;\n  border:1px solid var(--zba-line); border-radius:999px; background:var(--zba-card);\n  font:inherit; font-size:.93rem; cursor:pointer; transition:.14s;\n}\n#zba-assist .zba-a:hover{border-color:var(--zba-accent); background:#fff5ec}\n#zba-assist .zba-a:focus-visible{outline:2px solid var(--zba-accent); outline-offset:2px}\n#zba-assist .zba-echo{\n  display:inline-block; padding:6px 13px; border-radius:999px;\n  background:var(--zba-accent); color:#fff; font-size:.86rem; font-weight:600;\n}\n#zba-assist .zba-echo-row{text-align:right; margin:0 0 14px}\n\n#zba-assist .zba-card{\n  display:flex; gap:14px; padding:14px; margin:0 0 12px;\n  border:1px solid var(--zba-line); border-radius:14px; background:var(--zba-card);\n}\n#zba-assist .zba-card img{\n  width:92px; height:92px; object-fit:contain; flex:0 0 92px;\n  background:#fff; border-radius:10px; padding:6px;\n}\n#zba-assist .zba-card-body{min-width:0; flex:1}\n#zba-assist .zba-rank{\n  display:inline-block; font-size:.74rem; font-weight:800; letter-spacing:.04em;\n  text-transform:uppercase; color:var(--zba-accent); margin:0 0 3px;\n}\n#zba-assist .zba-name{font-weight:700; font-size:.97rem; margin:0 0 6px}\n#zba-assist .zba-price{font-size:1.18rem; font-weight:800; color:var(--zba-green)}\n#zba-assist .zba-was{font-size:.85rem; color:var(--zba-muted); text-decoration:line-through; margin-left:7px}\n#zba-assist .zba-off{\n  display:inline-block; margin-left:7px; padding:2px 8px; border-radius:7px;\n  background:var(--zba-accent); color:#fff; font-size:.78rem; font-weight:700;\n}\n#zba-assist .zba-meta{font-size:.85rem; color:var(--zba-muted); margin:5px 0 0}\n#zba-assist .zba-why{font-size:.88rem; margin:9px 0 0; padding-left:16px; position:relative}\n#zba-assist .zba-why::before{content:\"✓\"; position:absolute; left:0; color:var(--zba-green); font-weight:700}\n#zba-assist .zba-not{font-size:.88rem; margin:5px 0 0; padding-left:16px; position:relative; color:var(--zba-muted)}\n#zba-assist .zba-not::before{content:\"!\"; position:absolute; left:2px; color:var(--zba-accent); font-weight:800}\n#zba-assist .zba-cta{\n  display:inline-block; margin:11px 0 0; padding:9px 17px; border-radius:9px;\n  background:var(--zba-accent); color:#fff !important; text-decoration:none !important;\n  font-weight:700; font-size:.9rem;\n}\n#zba-assist .zba-cta:hover{background:var(--zba-accent2)}\n\n#zba-assist .zba-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:6px}\n#zba-assist .zba-restart{\n  padding:8px 15px; border:1px solid var(--zba-line); border-radius:999px;\n  background:#fff; font:inherit; font-size:.88rem; cursor:pointer;\n}\n#zba-assist .zba-restart:hover{border-color:var(--zba-accent)}\n#zba-assist .zba-note{font-size:.8rem; color:var(--zba-muted)}\n#zba-assist .zba-empty{\n  padding:13px 15px; border-radius:11px; background:#fff5ec;\n  border:1px solid #ffd9b8; font-size:.92rem;\n}\n\n@media (max-width:560px){\n  #zba-assist{padding:17px; margin:22px 10px; border-radius:14px}\n  #zba-assist .zba-title{font-size:1.22rem}\n  #zba-assist .zba-card{flex-direction:column}\n  #zba-assist .zba-card img{width:100%; height:150px; flex:none}\n  #zba-assist .zba-cta{display:block; text-align:center}\n}\n@media (prefers-color-scheme:dark){\n  #zba-assist{--zba-bg:#0f0f16; --zba-card:#191922; --zba-line:#2c2c3c;\n             --zba-fg:#f0f0f5; --zba-muted:#9494ad; --zba-green:#00e676}\n  #zba-assist .zba-a:hover{background:#241a12}\n  #zba-assist .zba-restart{background:#191922; color:var(--zba-fg)}\n  #zba-assist .zba-empty{background:#241a12; border-color:#4a3520}\n}";
   var HTML = "<div class=\"zba-head\">\n    <div class=\"zba-title\">Tu cherches quoi, exactement&nbsp;?</div>\n    <p class=\"zba-sub\">Réponds à 2 ou 3 questions, je te sors 3 produits du catalogue — et je te dis aussi\n      quand ce n'est <em>pas</em> pour toi.</p>\n  </div>\n\n  <div class=\"zba-thread\" id=\"zba-thread\" role=\"log\" aria-live=\"polite\"></div>\n\n  <div class=\"zba-foot\">\n    <button type=\"button\" class=\"zba-restart\" id=\"zba-restart\" hidden>↺ Recommencer</button>\n    <span class=\"zba-note\" id=\"zba-note\"></span>\n  </div>";
 
   function install() {
@@ -28,15 +29,12 @@
     root.setAttribute("data-tag", "fz2107site-21");
     root.innerHTML = HTML;
 
-    // Placement : juste au-dessus de la barre de tri / de la grille
-    // produits de la landing. On ne touche a aucun element existant.
+    // Placement : juste au-dessus de la barre de tri / grille produits.
+    // Aucun element existant de la page n'est modifie.
     var anchor = document.querySelector("#zb .zb-bar")
               || document.querySelector("#zb .zb-grid");
-    if (anchor && anchor.parentNode) {
-      anchor.parentNode.insertBefore(root, anchor);
-    } else {
-      (document.querySelector("#zb") || document.body).appendChild(root);
-    }
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(root, anchor);
+    else (document.querySelector("#zb") || document.body).appendChild(root);
 
     boot();
   }
@@ -60,8 +58,10 @@
           kw:["ssd","disque","memoire","ram","clé usb","cle usb","souris","clavier","ecran","moniteur","station","dock","webcam","ventilateur","refroidiss"],
           qs:[
             { q:"C'est quoi qui coince ?", opts:[
-              { label:"Il met un temps fou à démarrer", kw:["ssd","disque","nvme","m.2"] },
-              { label:"Il rame dès que j'ouvre plusieurs trucs", kw:["ram","memoire","ddr"] },
+              { label:"Il met un temps fou à démarrer", kw:["ssd","nvme","m.2"],
+                excl:["externe","portable","boitier","dock","enceinte"] },
+              { label:"Il rame dès que j'ouvre plusieurs trucs", kw:["ram","memoire","ddr"],
+                excl:["cle usb","carte sd","micro sd","externe"] },
               { label:"C'est le confort qui manque (écran, souris…)", kw:["ecran","moniteur","souris","clavier","dock","station","webcam"] }
             ]}
           ]},
@@ -167,6 +167,25 @@
         for (var i=0;i<kws.length;i++){ if (hay.indexOf(norm(kws[i])) !== -1) return true; }
         return false;
       }
+      // Exclusions : evite les faux amis (un disque dur EXTERNE n'accelere pas
+      // un PC, une cle USB n'est pas de la RAM). Mieux vaut zero resultat
+      // qu'un conseil faux.
+      function exclu(p, ex){
+        if (!ex || !ex.length) return false;
+        var hay = norm(p.t) + " " + norm(p.c);
+        for (var i=0;i<ex.length;i++){ if (hay.indexOf(norm(ex[i])) !== -1) return true; }
+        return false;
+      }
+      // Le catalogue contient des variantes tres proches d'un meme produit :
+      // on n'en montre jamais deux dans la meme selection.
+      function dedupe(list){
+        var vus = {}, out = [];
+        list.forEach(function(p){
+          var k = norm(p.t).split(/\s+/).slice(0,5).join(" ");
+          if (!vus[k]) { vus[k] = 1; out.push(p); }
+        });
+        return out;
+      }
 
       // Score "valeur sure" : la note seule ment quand il y a 8 avis.
       function scoreSur(p){
@@ -259,22 +278,24 @@
       // Le catalogue tourne tous les jours : une option qui ne mene a aucun
       // produit aujourd'hui n'est pas affichee. Mieux vaut moins de choix que
       // des impasses.
-      function dispo(kws){
-        for (var i=0;i<PRODUITS.length;i++){ if (matchKw(PRODUITS[i], kws)) return true; }
+      function dispo(kws, ex){
+        for (var i=0;i<PRODUITS.length;i++){
+          if (matchKw(PRODUITS[i], kws) && !exclu(PRODUITS[i], ex)) return true;
+        }
         return false;
       }
       function optionsUtiles(besoin, question){
         var q = question || besoin.qs[0];
         if (!q) return [];
         return q.opts.filter(function(o){
-          return dispo((o.kw && o.kw.length) ? o.kw : besoin.kw);
+          return dispo((o.kw && o.kw.length) ? o.kw : besoin.kw, o.excl || besoin.excl);
         });
       }
 
       function start(){
         thread.innerHTML = "";
         restartBtn.hidden = true;
-        state = { kw: [], min: 0, max: 1e9, mode: "sur" };
+        state = { kw: [], excl: [], min: 0, max: 1e9, mode: "sur" };
 
         var besoinsDispo = BESOINS.filter(function(b){
           return dispo(b.kw) && (!b.qs.length || optionsUtiles(b).length > 0);
@@ -290,6 +311,7 @@
         }), function(opt){
           var b = opt.besoin;
           state.kw = b.kw.slice();
+          state.excl = (b.excl || []).slice();
           var etape = 0;
           (function suite(){
             if (etape < b.qs.length){
@@ -298,6 +320,7 @@
               if (!opts.length){ suite(); return; }
               addQuestion(q.q, opts, function(o){
                 if (o.kw && o.kw.length) state.kw = o.kw.slice();
+                if (o.excl) state.excl = o.excl.slice();
                 suite();
               });
               return;
@@ -316,7 +339,8 @@
       function finir(){
         var res = PRODUITS.filter(function(p){
           var pr = Number(p.p) || 0;
-          return pr >= state.min && pr <= state.max && matchKw(p, state.kw);
+          return pr >= state.min && pr <= state.max
+                 && matchKw(p, state.kw) && !exclu(p, state.excl);
         });
         if (state.mode === "sur"){
           res = res.filter(function(p){ return (Number(p.n)||0) >= 50; });
@@ -326,7 +350,7 @@
         } else {
           res.sort(function(a,b){ return (Number(a.p)||0) - (Number(b.p)||0); });
         }
-        renderResultats(res.slice(0,3), state.mode);
+        renderResultats(dedupe(res).slice(0,3), state.mode);
       }
 
       // ── Liens profonds venus des réseaux ─────────────────────────────
@@ -404,7 +428,5 @@
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", install);
-  } else {
-    install();
-  }
+  } else { install(); }
 })();
