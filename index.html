@@ -101,7 +101,7 @@ let DATA=null, NICHE="all", Q="";
 const $=s=>document.querySelector(s);
 const norm=s=>(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
 const eur=v=>v.toLocaleString("fr-FR",{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2})+" €";
-function link(p){const tag=(DATA.niches[p.k]||{}).tag||"fz2107site-21";return `https://www.amazon.fr/dp/${p.a}?tag=${tag}`}
+const SRC_TAG={pin:"fz2107pin-21",tt:"fz2107tt-21",fb:"fz2107fb-21"};const SRC=(new URLSearchParams(location.search).get("src")||"").toLowerCase();function link(p){const tag=SRC_TAG[SRC]||(DATA.niches[p.k]||{}).tag||"fz2107site-21";return `https://www.amazon.fr/dp/${p.a}?tag=${tag}`}
 function badge(p){if(p.s==="bestseller"&&p.rk&&p.rk<=10)return[`N°${p.rk} de sa catégorie`,""];if(p.s==="envolees")return["Ventes en hausse",""];
  if(p.d>=15)return[`-${p.d} %`,"red"];if(p.s==="recherche")return["Très recherché",""];if(p.n>=5000)return["Best-seller",""];return null}
 function score(p,q){if(!q)return 1;const hay=norm(p.t+" "+p.c+" "+(p.b||[]).join(" "));let s=0,hit=0;
@@ -109,7 +109,9 @@ function score(p,q){if(!q)return 1;const hay=norm(p.t+" "+p.c+" "+(p.b||[]).join
  return hit?s+Math.log10(1+p.n)*.3+p.r*.2:0}
 function render(){
  let L=DATA.products.filter(p=>NICHE==="all"||p.k===NICHE);
- if(Q)L=L.map(p=>[score(p,Q),p]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);
+ const QR=(Q||"").trim().replace(/^r[ée]f\.?\s*/i,"");
+ if(/^\d{3,6}$/.test(QR)&&DATA.products.some(p=>String(p.x)===QR))L=DATA.products.filter(p=>String(p.x)===QR);
+ else if(Q)L=L.map(p=>[score(p,Q),p]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);
  const so=$("#sort").value;
  if(!Q){if(so==="rate")L.sort((a,b)=>b.r-a.r||b.n-a.n);else if(so==="asc")L.sort((a,b)=>a.p-b.p);else if(so==="desc")L.sort((a,b)=>b.p-a.p);else if(so==="disc")L.sort((a,b)=>b.d-a.d)}
  $("#count").textContent=`${L.length} produit${L.length>1?"s":""}`;
@@ -131,8 +133,21 @@ fetch("data/site_index.json?v="+Date.now()).then(r=>r.json()).then(d=>{DATA=d;DA
  document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{Q="";$("#q").value="";setNiche(t.dataset.n)});
  const u=new URLSearchParams(location.search);
  if(u.get("n")&&DATA.niches[u.get("n")])NICHE=u.get("n");
- setNiche(NICHE);
  const ref=u.get("ref"), top=u.get("top");
+ const FP=ref?DATA.products.find(p=>String(p.x)===ref):null;
+ if(FP&&FP.k&&DATA.niches[FP.k])NICHE=FP.k;
+ setNiche(NICHE);
+ if(FP){const f=document.createElement("div");
+  f.style.cssText="display:flex;gap:14px;align-items:center;background:#fff;color:#111;border:3px solid #ffd600;border-radius:16px;padding:14px;margin:12px 0 18px;box-shadow:0 6px 24px rgba(0,0,0,.18)";
+  const im=document.createElement("img");im.src=FP.i?"https://m.media-amazon.com/images/I/"+FP.i+"._AC_SL500_.jpg":"";im.alt="";im.style.cssText="width:110px;height:110px;object-fit:contain;flex:none;border-radius:10px;background:#fff";
+  const bx=document.createElement("div");bx.style.cssText="flex:1;min-width:0";
+  const lb=document.createElement("div");lb.textContent="Le produit que tu as vu";lb.style.cssText="font-size:12px;font-weight:700;text-transform:uppercase;color:#b8860b";
+  const tt=document.createElement("div");tt.textContent=FP.t||"";tt.style.cssText="font-weight:700;margin:4px 0;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden";
+  const pr=document.createElement("div");pr.textContent=FP.p?String(FP.p).replace(".",",")+" €":"";pr.style.cssText="font-size:22px;font-weight:800;color:#0a8f4e";
+  const a=document.createElement("a");a.href=link(FP);a.target="_blank";a.rel="nofollow sponsored noopener";a.textContent="Voir ce produit sur Amazon →";
+  a.style.cssText="display:inline-block;margin-top:8px;background:#ffd600;color:#111;font-weight:800;padding:12px 16px;border-radius:10px;text-decoration:none";
+  bx.append(lb,tt,pr,a);f.append(im,bx);const g=document.getElementById("grid");g.parentNode.insertBefore(f,g);
+  setTimeout(()=>f.scrollIntoView({behavior:"smooth",block:"start"}),200);}
  if(ref||top){const ids=(top||ref).split(",");if(top){DATA.products.sort((a,b)=>ids.includes(String(b.x))-ids.includes(String(a.x)));render()}
   setTimeout(()=>{ids.forEach((id,i)=>{const el=document.getElementById("ref-"+id);if(el){el.classList.add("hl");if(i===0)el.scrollIntoView({behavior:"smooth"})}})},300)}
 }).catch(()=>{$("#grid").innerHTML='<div class="empty">Catalogue indisponible pour le moment.</div>'});
