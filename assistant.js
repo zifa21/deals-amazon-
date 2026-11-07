@@ -73,7 +73,24 @@
         return fetch(u, {cache: "no-store"})
           .then(function(r){ return r.ok ? r.json() : null; })
           .then(function(j){ return (j && j.url) ? j.url.replace(/\/+$/, "") : null; })
+          .then(function(base){
+            // On verifie que le proxy repond vraiment (tunnel parfois mort).
+            if (!base) return null;
+            return fetchDelai(base + "/sante", {cache: "no-store"}, 4000)
+              .then(function(r){ return r.ok ? base : null; })
+              .catch(function(){ return null; });
+          })
           .catch(function(){ return null; });
+      }
+
+      // fetch avec delai max : au-dela, on bascule en mode secours.
+      function fetchDelai(url, opts, ms){
+        return new Promise(function(ok, ko){
+          var fini = false;
+          var t = setTimeout(function(){ if (!fini){ fini = true; ko(new Error("delai")); } }, ms);
+          fetch(url, opts).then(function(r){ if (!fini){ fini = true; clearTimeout(t); ok(r); } },
+                                function(e){ if (!fini){ fini = true; clearTimeout(t); ko(e); } });
+        });
       }
 
 
@@ -539,28 +556,87 @@
         return out;
       }
 
+      // ── Mode secours SANS IA ─────────────────────────────────────────
+      // Si le service d'IA ne repond pas, on cherche quand meme dans le
+      // catalogue avec les mots du visiteur (+ quelques synonymes courants).
+      var STOP = ("je j me mon ma mes un une des de du la le les l d pour avec sans " +
+                  "qui que quoi est et ou a au aux en sur dans pas plus tres veux voudrais " +
+                  "cherche besoin quelque chose truc bon bien pas cher moins euros euro eur " +
+                  "mais il elle on nous vous ce cet cette ca c qu").split(" ");
+      var SYNONYMES = {
+        "rame":["ssd","ram","memoire"], "lent":["ssd","ram"], "stockage":["ssd","disque","cle"],
+        "humidite":["deshumidificateur","absorbeur"], "moisissure":["deshumidificateur","absorbeur"],
+        "chat":["chat","litiere","griffoir"], "chien":["chien","laisse","harnais","croquettes"],
+        "poils":["brosse","aspirateur","rouleau"], "sport":["fitness","musculation","elastique"],
+        "maigrir":["fitness","corde","tapis"], "dos":["ergonomique","coussin","support"],
+        "froid":["chauffage","plaid","couverture"], "dormir":["oreiller","couette","masque"],
+        "cadeau":["lego","coffret","set"], "jeu":["gaming","manette","souris"],
+        "bricolage":["perceuse","visseuse","outil","coffret"], "cuisine":["poele","casserole","couteau"],
+        "rangement":["boite","cube","organisateur","rangement"], "son":["casque","enceinte","ecouteurs"],
+        "telephone":["chargeur","coque","cable","powerbank"], "batterie":["powerbank","chargeur","pile"]
+      };
+      function motsDe(texte){
+        var mots = norm(texte).replace(/[^a-z0-9 ]+/g, " ").split(/\s+/);
+        var out = [];
+        mots.forEach(function(m){
+          if (!m || m.length < 3 || STOP.indexOf(m) >= 0 || /^\d+$/.test(m)) return;
+          var base = m.replace(/(s|x)$/, "");
+          if (out.indexOf(base) < 0) out.push(base);
+          (SYNONYMES[base] || SYNONYMES[m] || []).forEach(function(s){
+            if (out.indexOf(s) < 0) out.push(s);
+          });
+        });
+        return out;
+      }
+      function rechercheLocale(texte){
+        var mots = motsDe(texte);
+        var mB = /(\d+)\s*(€|e|eur|euros?)\b/i.exec(texte) || /moins de\s*(\d+)/i.exec(texte);
+        var max = mB ? Number(mB[1]) : 1e9;
+        var notes = PRODUITS.map(function(p){
+          var t = norm(p.t), c = norm(p.c), s = 0;
+          mots.forEach(function(m){
+            if (motPresent(t, m) || motPresent(t, m + "s")) s += 2;
+            else if (c.indexOf(m) >= 0) s += 1;
+          });
+          return { p: p, s: s };
+        }).filter(function(x){
+          return x.s >= 2 && (Number(x.p.p) || 0) <= max && (Number(x.p.n) || 0) >= 50;
+        });
+        notes.sort(function(a, b){ return (b.s - a.s) || (scoreSur(b.p) - scoreSur(a.p)); });
+        var res = dedupe(notes.map(function(x){ return x.p; }));
+        if (!res.length){
+          addMsg('<div class="zba-empty"><strong>Rien de solide dans le catalogue du jour pour ça.</strong><br>' +
+                 "Essaie avec un autre mot (ex : « casque », « chat », « SSD ») " +
+                 "ou passe par les questions ci-dessous.</div>");
+          start(true);
+          return;
+        }
+        renderResultats(res.slice(0, 3), "sur", null, "Voilà ce que j'ai trouvé :");
+        addMsg('<p class="zba-q">Autre chose ? Écris-le au-dessus, ou repars des questions :</p>');
+        start(true);
+      }
+
       function repondreALaSaisie(texte){
-        if (!PROXY || !texte) return;
+        if (!texte) return;
         formSaisie.hidden = false;
         thread.innerHTML = "";
         restartBtn.hidden = true;
         addMsg('<div class="zba-echo-row"><span class="zba-echo">' + esc(texte) + "</span></div>");
+        if (!PROXY){ rechercheLocale(texte); return; }
         reflechit(true);
 
-        fetch(PROXY + "/chat", {
+        fetchDelai(PROXY + "/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message: texte, categories: categoriesDuCatalogue() })
-        })
+        }, 15000)
           .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
           .then(function(j){
             reflechit(false);
             var cats = (j && j.categories) || [];
             if (j && j.reformulation) addMsg('<p class="zba-q">' + esc(j.reformulation) + "</p>");
             if (!cats.length){
-              addMsg('<div class="zba-empty">Je n\'ai pas trouv\u00e9 de rayon qui colle \u00e0 \u00e7a. ' +
-                     "Reformule, ou passe par les questions ci-dessous.</div>");
-              start(true);
+              rechercheLocale(texte);
               return;
             }
             var sel = { cat: cats };
@@ -606,10 +682,9 @@
           })
           .catch(function(e){
             reflechit(false);
-            addMsg('<div class="zba-empty">Je n\'arrive pas \u00e0 r\u00e9fl\u00e9chir l\u00e0 tout de suite. ' +
-                   "Passe par les questions ci-dessous, \u00e7a marche sans moi.</div>");
-            start(true);
-            if (window.console) console.warn("[assistant] proxy", e);
+            // Secours : l'IA ne repond pas, on cherche quand meme dans le catalogue.
+            rechercheLocale(texte);
+            if (window.console) console.warn("[assistant] proxy -> mode secours", e);
           });
       }
 
@@ -629,6 +704,8 @@
           DATE_RELEVE = (j && j.date) || "";
           noteEl.textContent = PRODUITS.length + " produits vérifiés · relevé du " + DATE_RELEVE +
                                " · aucune donnée personnelle collectée";
+          // La saisie libre est toujours affichee : sans IA, recherche locale.
+          formSaisie.hidden = false;
           start(deepLink());
           // La saisie libre n'apparait que si le proxy repond. Sans lui,
           // l'assistant reste utilisable en mode boutons.
